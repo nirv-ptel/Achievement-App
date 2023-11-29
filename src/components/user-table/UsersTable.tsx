@@ -59,13 +59,14 @@ const UsersTable = () => {
     ref.current = id.toString();
     setIsConfirmUsersModal(!isOpenConfirmUsersModal);
   };
+
   const user: any = useUser();
 
   return (
     <>
       <div className="px-32 border-b border-gray-200 bg-white py-5 shadow-sm flex justify-start items-center gap-[1.125rem] flex-wrap">
         <h3 className="text-2xl text-blackolive font-inter-semibold">
-          {user?.user?.id}
+          {user?.user?.email}
         </h3>
         <Button
           title={"+ Add Users"}

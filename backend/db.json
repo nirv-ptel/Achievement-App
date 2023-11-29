@@ -1,18 +1,7 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
   "me": {
-    "id": "TableData",
-    "name": "Yash Patel",
-    "number": "9909286298",
-    "email": "yash@mailinator.com",
-    "role": "Computer Engineer",
-    "address": "Ahmedabad"
+    "email": "asdsdsaas",
+    "password": "123456"
   },
   "users": [
     {

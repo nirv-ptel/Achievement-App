@@ -9,7 +9,7 @@ import {
 import MainLayout from "./MainLayout";
 import withAuthentication from "./shared/hoc/withAuthentication";
 import withoutAuthentication from "./shared/hoc/withoutAuthentication";
-import Login from "./shared/auth/Login";
+import Login from "./shared/auth/components/Login";
 import Dashboard from "./components/dashboard/Dashboard";
 
 import "./App.css";

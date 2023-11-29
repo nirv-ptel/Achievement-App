@@ -30,7 +30,7 @@ const UserDispatchContext = createContext<SetUserDetailsType | undefined>(
 );
 
 const UserProvider = ({ children }: UserProviderProps) => {
-  const { data: response, isLoading } = useQuery(["get-me"], me);
+  const { data: response, isLoading } = useQuery(["me"], me);
 
   const token = "token123";
 
