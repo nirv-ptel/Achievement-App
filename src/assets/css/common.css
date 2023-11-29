@@ -1,0 +1,131 @@
+body {
+@apply text-sm font-normal;
+font-family: "Inter", sans-serif;
+}
+
+:root {
+font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+line-height: 1.5;
+font-weight: 400;  
+}
+
+
+/* Styles for button group */
+
+.btn-primary {
+    @apply flex items-center justify-center gap-2 rounded-md !bg-gray-600 px-3 py-[0.563rem] text-sm font-medium leading-5 text-white shadow-sm hover:!bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto transition-all;
+  }
+  
+  .btn-danger {
+    @apply flex items-center justify-center gap-2 w-full rounded-md !bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:!bg-red-500 sm:w-auto;
+  }
+  
+  /* width */
+::-webkit-scrollbar {
+  @apply w-[0.24rem] h-[0.24rem];
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-[#f1f1f1];
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-[#888];
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#555];
+}
+  /* -------------- */
+
+.table_main {
+@apply border border-gray-200 border-solid rounded-[0.5rem] max-w-[100rem] w-full;
+max-height: calc(100vh - 212px);
+}
+
+.table_container {
+@apply min-w-full divide-y divide-gray-300 p-4;
+}
+
+.table_container thead tr th {
+@apply px-6 py-3.5 text-left font-medium text-gray-600 uppercase align-top text-xs;
+}
+
+.table_container .table-header__inner {
+@apply flex gap-1 items-center;
+}
+
+.table_container thead tr {
+@apply bg-gray-50 rounded-lg;
+}
+
+.table_container tbody {
+@apply divide-y divide-gray-200;
+}
+
+.table_container tbody tr td {
+@apply whitespace-nowrap px-6 py-4 text-sm text-gray-700 font-normal;
+}
+.table_container tbody tr td:first-child {
+@apply font-medium;
+}
+
+/* modal styles */
+
+.modal-card {
+  transform: translate(-50%, -50%);
+  @apply flex justify-start items-start gap-4 rounded-lg p-6 bg-white max-w-[32rem] w-full m-auto border-[0.063rem] border-quillgrey border-solid z-[70] absolute top-1/2 left-1/2;
+}
+@screen maxSm {
+  .modal-card {
+    max-width: calc(100% - 1.563rem);
+  }
+}
+.overlay {
+  @apply overflow-hidden;
+}
+
+.overlay::after {
+  @apply bottom-0 left-0 fixed right-0 top-0 w-full h-full;
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  z-index: 60;
+}
+
+/* input  */
+.form_label {
+  @apply block text-sm font-medium leading-5 text-blackolive;
+}
+.form_input {
+  @apply block w-full pl-3 outline-none border rounded-md py-1.5 text-blackolive shadow-sm  placeholder:text-gray-400  sm:text-sm sm:leading-6;
+}
+
+/* form error CSS */
+.form-error {
+  @apply text-red-600 text-xs font-medium mt-1
+} 
+
+/* form validation error  */
+
+.is-error {
+  @apply !border-[#FCA5A5] !ring-0 !border;
+}
+
+/* button hover  */
+
+.button_hover:hover svg g path {
+  @apply stroke-gray-300;
+}
+.button_hover:hover svg path {
+  @apply stroke-gray-300;
+}
+.button_hover:hover {
+  @apply text-gray-300;
+}
