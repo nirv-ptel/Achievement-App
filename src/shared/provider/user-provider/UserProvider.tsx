@@ -2,6 +2,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import React, { ReactNode, createContext } from "react";
+import { useQuery } from "react-query";
+import { me } from "../../auth/api";
 // import { useQuery } from "react-query";
 // import { me } from "../../auth/api";
 
@@ -9,27 +11,35 @@ interface UserProviderProps {
   children: ReactNode;
 }
 interface UserContextType {
-  email: string | null;
+  user: string | null;
   token: string;
 }
+interface ProviderData {
+  user: Record<string, string>;
+  isLoading: boolean;
+  refetchUser: CallableFunction;
+}
+
 type SetUserDetailsType = React.Dispatch<React.SetStateAction<UserContextType>>;
 
-const UserContext = createContext<UserContextType | undefined>(undefined);
+const UserContext = createContext<UserContextType | undefined | ProviderData>(
+  undefined
+);
 const UserDispatchContext = createContext<SetUserDetailsType | undefined>(
   undefined
 );
 
-function UserProvider({ children }: UserProviderProps) {
-  // const { data: response } = useQuery(["get-users"]);
+const UserProvider = ({ children }: UserProviderProps) => {
+  const { data: response, isLoading } = useQuery(["get-me"], me);
 
   const token = "token123";
 
   return (
-    <UserContext.Provider value={{ email: "email@gmail.com", token }}>
+    <UserContext.Provider value={{ user: response?.data, isLoading, token }}>
       {children}
     </UserContext.Provider>
   );
-}
+};
 
 export const useUser = () => {
   return React.useContext(UserContext);

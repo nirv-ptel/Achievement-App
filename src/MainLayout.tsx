@@ -2,6 +2,9 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import Header from "./shared/header/Header";
 import Dashboard from "./components/dashboard/Dashboard";
 import Sidebar from "./shared/sidebar/Sidebar";
+import UsersTable from "./components/user-table/UsersTable";
+import NotFound from "./shared/not-found/NotFound";
+import Profile from "./components/profile/components/Profile";
 
 const MainLayout = () => {
   return (
@@ -11,7 +14,10 @@ const MainLayout = () => {
         <Routes>
           <Route path="" element={<Outlet />}>
             <Route index element={<Dashboard />} />
+            <Route path="users" element={<UsersTable />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Sidebar />

@@ -20,7 +20,7 @@ const Login = () => {
       console.log(data, "data");
       queryClient.invalidateQueries("get-users");
       const token = "test123";
-      localStorage.setItem("authToken", token);
+      // localStorage.setItem("authToken", token);
       Cookies.set("authToken", token);
     },
   });

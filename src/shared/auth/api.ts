@@ -1,5 +1,5 @@
-import axios from "axios";
+import api from "../api";
 
 export const me = () => {
-  return axios.get("/me");
+  return api.get("/me");
 };

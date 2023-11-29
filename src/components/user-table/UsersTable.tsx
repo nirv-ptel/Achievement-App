@@ -9,6 +9,7 @@ import AddUsersModal from "../user-table/AddUsersModal";
 import useUserTable from "./hooks/useUserTable";
 import ConfirmationUsersModal from "./ConfirmationUsersModal";
 import useDeleteUsers from "./hooks/useDeleteUsers";
+import { useUser } from "../../shared/provider/user-provider/UserProvider";
 
 const UsersTable = () => {
   const { data } = useUserTable();
@@ -58,11 +59,14 @@ const UsersTable = () => {
     ref.current = id.toString();
     setIsConfirmUsersModal(!isOpenConfirmUsersModal);
   };
+  const user: any = useUser();
 
   return (
     <>
       <div className="px-32 border-b border-gray-200 bg-white py-5 shadow-sm flex justify-start items-center gap-[1.125rem] flex-wrap">
-        <h3 className="text-2xl text-blackolive font-inter-semibold">Users</h3>
+        <h3 className="text-2xl text-blackolive font-inter-semibold">
+          {user?.user?.id}
+        </h3>
         <Button
           title={"+ Add Users"}
           type="submit"
