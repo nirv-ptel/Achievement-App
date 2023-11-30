@@ -1,7 +1,7 @@
 {
   "me": {
-    "email": "asdsdsaas",
-    "password": "123456"
+    "email": "user4@tol.com",
+    "password": "12345678"
   },
   "users": [
     {
@@ -54,11 +54,11 @@
     },
     {
       "id": "-gXDbCH",
-      "name": "Chancellor Brewer",
+      "name": "hardik Brewer",
       "number": "228",
       "email": "pasu@mailinator.com",
       "role": "Enim amet id dolore",
-      "address": "Ipsum delectus eve"
+      "address": "hardik delectus eve"
     }
   ]
 }

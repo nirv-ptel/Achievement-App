@@ -12,7 +12,6 @@ interface UserProviderProps {
 }
 interface UserContextType {
   user: string | null;
-  token: string;
 }
 interface ProviderData {
   user: Record<string, string>;
@@ -32,10 +31,8 @@ const UserDispatchContext = createContext<SetUserDetailsType | undefined>(
 const UserProvider = ({ children }: UserProviderProps) => {
   const { data: response, isLoading } = useQuery(["me"], me);
 
-  const token = "token123";
-
   return (
-    <UserContext.Provider value={{ user: response?.data, isLoading, token }}>
+    <UserContext.Provider value={{ user: response?.data, isLoading }}>
       {children}
     </UserContext.Provider>
   );

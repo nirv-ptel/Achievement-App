@@ -7,7 +7,4 @@ export const me = () => {
 
 export const signin = (data: LoginFormProps) => {
   return api.post("/me", data);
-  // .then((res) => {
-  //   setToken(res.data.access_token);
-  // });
 };

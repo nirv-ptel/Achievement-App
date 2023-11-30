@@ -21,9 +21,22 @@ const handleAxiosError = () => {
   removeItemInCookie(TOKEN);
 };
 
+// style={dropDownArrowStyle}
+const dropDownArrowStyle = {
+  dropdownIndicator: (
+    base: any,
+    state: { selectProps: { menuIsOpen: any } }
+  ) => ({
+    ...base,
+    transition: "all .2s ease",
+    transform: state.selectProps.menuIsOpen ? "rotate(180deg)" : null,
+  }),
+};
+
 export {
   removeItemInCookie,
   clientConfig,
   getItemFromCookie,
   handleAxiosError,
+  dropDownArrowStyle,
 };

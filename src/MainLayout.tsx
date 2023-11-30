@@ -5,8 +5,20 @@ import Sidebar from "./shared/sidebar/Sidebar";
 import UsersTable from "./components/user-table/UsersTable";
 import NotFound from "./shared/not-found/NotFound";
 import Profile from "./components/profile/components/Profile";
+import { useUser } from "./shared/provider/user-provider/UserProvider";
+import Loader from "./shared/loader/Loader";
 
 const MainLayout = () => {
+  const { isFetching }: any = useUser();
+
+  if (isFetching) {
+    return (
+      <div className="text-2xl flex items-center h-screen justify-center">
+        <Loader size="lg" />
+      </div>
+    );
+  }
+
   return (
     <>
       <Header />

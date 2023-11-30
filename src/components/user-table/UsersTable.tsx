@@ -10,10 +10,14 @@ import useUserTable from "./hooks/useUserTable";
 import ConfirmationUsersModal from "./ConfirmationUsersModal";
 import useDeleteUsers from "./hooks/useDeleteUsers";
 import { useUser } from "../../shared/provider/user-provider/UserProvider";
+import { removeItemInCookie } from "../../shared/helper/util";
+import { useNavigate } from "react-router-dom";
+import { ACCESS_TOKEN } from "../../shared/helper/constant";
 
 const UsersTable = () => {
   const { data } = useUserTable();
   const userData = data?.data;
+  const navigate = useNavigate();
 
   const filterData = userData?.sort(function (a: UserProps, b: UserProps) {
     return parseInt(b.id) - parseInt(a.id);
@@ -62,12 +66,21 @@ const UsersTable = () => {
 
   const user: any = useUser();
 
+  const onClickLogout = () => {
+    removeItemInCookie(ACCESS_TOKEN);
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="px-32 border-b border-gray-200 bg-white py-5 shadow-sm flex justify-start items-center gap-[1.125rem] flex-wrap">
-        <h3 className="text-2xl text-blackolive font-inter-semibold">
-          {user?.user?.email}
-        </h3>
+        <h3 className="text-2xl text-blackolive">{user?.user?.email}</h3>
+        <Button
+          type={"button"}
+          title={"Logout"}
+          variant="secondary"
+          onClick={() => onClickLogout()}
+        />
         <Button
           title={"+ Add Users"}
           type="submit"
