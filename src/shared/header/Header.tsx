@@ -1,12 +1,14 @@
 import { Fragment, useRef, useState } from "react";
-import { removeItemInCookie } from "../helper/util";
+import { capitalizeFirstLetter, removeItemInCookie } from "../helper/util";
 import { TOKEN } from "../helper/constant";
 import { Menu, Transition } from "@headlessui/react";
 import useOutsideClick from "../hooks/useOutsideClick";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../provider/user-provider/UserProvider";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { user }: any = useUser();
 
   const profileRef = useRef(null);
 
@@ -34,10 +36,10 @@ const Header = () => {
           <Menu as="div" className="relative">
             <Menu.Button
               ref={profileRef}
-              className="-m-1.5 flex items-center p-1.5"
+              className="-m-1.5 flex items-center justify-center p-2 rounded-[50%] bg-[#eee] w-10 h-10"
               onClick={() => setMenuOpen(!menuOpen)}
             >
-              Y
+              {capitalizeFirstLetter(user?.email)}
             </Menu.Button>
             <Transition
               as={Fragment}

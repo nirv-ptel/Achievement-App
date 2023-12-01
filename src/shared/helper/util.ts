@@ -39,11 +39,19 @@ const dropDownArrowStyle = {
   }),
 };
 
+function capitalizeFirstLetter(str: string | undefined): string {
+  if (str) {
+    return str.charAt(0).toUpperCase();
+  }
+  return "";
+}
+
 export {
   removeItemInCookie,
   clientConfig,
   getItemFromCookie,
   handleAxiosError,
   dropDownArrowStyle,
+  capitalizeFirstLetter,
   setToken,
 };
