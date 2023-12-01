@@ -9,10 +9,9 @@ import AddUsersModal from "../user-table/AddUsersModal";
 import useUserTable from "./hooks/useUserTable";
 import ConfirmationUsersModal from "./ConfirmationUsersModal";
 import useDeleteUsers from "./hooks/useDeleteUsers";
-import { useUser } from "../../shared/provider/user-provider/UserProvider";
 import { removeItemInCookie } from "../../shared/helper/util";
 import { useNavigate } from "react-router-dom";
-import { ACCESS_TOKEN, TOKEN } from "../../shared/helper/constant";
+import { TOKEN } from "../../shared/helper/constant";
 
 const UsersTable = () => {
   const { data } = useUserTable();
