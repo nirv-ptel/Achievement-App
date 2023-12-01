@@ -12,7 +12,7 @@ import useDeleteUsers from "./hooks/useDeleteUsers";
 import { useUser } from "../../shared/provider/user-provider/UserProvider";
 import { removeItemInCookie } from "../../shared/helper/util";
 import { useNavigate } from "react-router-dom";
-import { ACCESS_TOKEN } from "../../shared/helper/constant";
+import { ACCESS_TOKEN, TOKEN } from "../../shared/helper/constant";
 
 const UsersTable = () => {
   const { data } = useUserTable();
@@ -64,23 +64,14 @@ const UsersTable = () => {
     setIsConfirmUsersModal(!isOpenConfirmUsersModal);
   };
 
-  const user: any = useUser();
-
   const onClickLogout = () => {
-    removeItemInCookie(ACCESS_TOKEN);
+    removeItemInCookie(TOKEN);
     navigate("/login");
   };
 
   return (
     <>
       <div className="px-32 border-b border-gray-200 bg-white py-5 shadow-sm flex justify-start items-center gap-[1.125rem] flex-wrap">
-        <h3 className="text-2xl text-blackolive">{user?.user?.email}</h3>
-        <Button
-          type={"button"}
-          title={"Logout"}
-          variant="secondary"
-          onClick={() => onClickLogout()}
-        />
         <Button
           title={"+ Add Users"}
           type="submit"

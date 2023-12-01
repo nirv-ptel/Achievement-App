@@ -31,11 +31,12 @@ function App() {
           <Router>
             <Routes>
               <Route path="/*" element={withAuthentication(MainLayout)}>
-                <Route index element={<Navigate to={"/"} />} />
+                {/* <Route index element={<Navigate to={"/"} />} /> */}
+                <Route index element={<Dashboard />} />
               </Route>
               <Route element={withoutAuthentication(UnAuthenticatedApp)}>
                 <Route path="login" element={<Login />} />
-                <Route index element={<Dashboard />} />
+                {/* <Route index element={<Dashboard />} /> */}
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>

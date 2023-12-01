@@ -2,7 +2,14 @@ import { InternalAxiosRequestConfig } from "axios";
 import Cookies from "js-cookie";
 import { TOKEN } from "./constant";
 
-const getItemFromCookie = (key: string) => Cookies.get(key);
+const getItemFromCookie = (key: string) => {
+  console.log(Cookies.get(key));
+  return Cookies.get(key);
+};
+
+const setToken = (token: string) => {
+  return Cookies.set(TOKEN, token);
+};
 
 const removeItemInCookie = (key: string) => Cookies.remove(key);
 
@@ -39,4 +46,5 @@ export {
   getItemFromCookie,
   handleAxiosError,
   dropDownArrowStyle,
+  setToken,
 };

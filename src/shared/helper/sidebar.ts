@@ -1,4 +1,4 @@
-import { BoltIcon, HomeIcon, PhotoIcon } from "@heroicons/react/24/outline";
+import { BoltIcon, BookOpenIcon, HomeIcon } from "@heroicons/react/24/outline";
 
 export const navigation = [
   {
@@ -18,9 +18,9 @@ export const navigation = [
     activeMenu: "/users",
   },
   {
-    name: "Product Images",
+    name: "Product",
     href: "/images",
-    icon: PhotoIcon,
+    icon: BookOpenIcon,
     current: false,
     action: "IMAGES",
     activeMenu: "/images",

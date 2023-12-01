@@ -2,8 +2,7 @@
 import { useFormik } from "formik";
 import { loginSchema } from "../auth/validation";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
-import { ACCESS_TOKEN } from "../helper/constant";
+import { ACCESS_TOKEN, TOKEN } from "../helper/constant";
 
 interface LoginFormProps {
   email: string;
@@ -11,8 +10,6 @@ interface LoginFormProps {
 }
 
 export const useLoginForm = (login: any) => {
-  const navigate = useNavigate();
-
   return useFormik<LoginFormProps>({
     initialValues: {
       email: "",
@@ -22,8 +19,8 @@ export const useLoginForm = (login: any) => {
     validateOnChange: false,
     enableReinitialize: true,
     onSubmit: (values) => {
-      Cookies.set("authToken", ACCESS_TOKEN || "");
-      navigate("/");
+      Cookies.set("Token", TOKEN || "");
+
       login(values.email, values.password);
     },
   });

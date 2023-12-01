@@ -36,6 +36,20 @@ font-family: "Inter", sans-serif;
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-[#555];
 }
+
+/* Styles for sidebar */
+
+.sidebarList {
+  @apply flex gap-x-3 rounded-md p-2 text-sm leading-6 font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 items-center;
+}
+
+.sidebarListActive {
+  @apply flex gap-x-3 rounded-md p-2 text-sm leading-6 font-medium   text-gray-900 bg-gray-100;
+}
+
+.sidebarListActive svg path {
+  stroke: #6b7280 !important;
+}
   /* -------------- */
 
 .table_main {
