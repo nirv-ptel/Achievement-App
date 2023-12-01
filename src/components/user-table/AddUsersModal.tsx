@@ -31,7 +31,7 @@ const AddUsersModal = ({
   const { values, handleChange, handleSubmit, errors } = useCreateUsersForm(
     isEdit
       ? () => editUsersFn(values)
-      : () => createUserFn({ id: uuid(), ...values }),
+      : () => createUserFn({ ...values, id: uuid() }),
     data
   );
 
