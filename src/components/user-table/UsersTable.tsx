@@ -9,14 +9,10 @@ import AddUsersModal from "../user-table/AddUsersModal";
 import useUserTable from "./hooks/useUserTable";
 import ConfirmationUsersModal from "./ConfirmationUsersModal";
 import useDeleteUsers from "./hooks/useDeleteUsers";
-import { removeItemInCookie } from "../../shared/helper/util";
-import { useNavigate } from "react-router-dom";
-import { TOKEN } from "../../shared/helper/constant";
 
 const UsersTable = () => {
   const { data } = useUserTable();
   const userData = data?.data;
-  const navigate = useNavigate();
 
   const filterData = userData?.sort(function (a: UserProps, b: UserProps) {
     return parseInt(b.id) - parseInt(a.id);
@@ -63,14 +59,9 @@ const UsersTable = () => {
     setIsConfirmUsersModal(!isOpenConfirmUsersModal);
   };
 
-  const onClickLogout = () => {
-    removeItemInCookie(TOKEN);
-    navigate("/login");
-  };
-
   return (
     <>
-      <div className="px-32 border-b border-gray-200 bg-white py-5 shadow-sm flex justify-start items-center gap-[1.125rem] flex-wrap">
+      <div className="flex justify-start items-center gap-[1.125rem] flex-wrap pb-8">
         <Button
           title={"+ Add Users"}
           type="submit"
@@ -79,7 +70,7 @@ const UsersTable = () => {
           className="ml-auto ring-0 shadow-none hover:bg-[#eee]"
         />
       </div>
-      <div className="mt-5 px-8 py-5 flex justify-center">
+      <div className="flex justify-center">
         <div className="table_main overflow-x-auto h-[calc(100vh-200px)] relative">
           <table className="table_container">
             <thead className="sticky top-0 z-10">

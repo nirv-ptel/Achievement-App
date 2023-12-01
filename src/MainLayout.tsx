@@ -21,9 +21,8 @@ const MainLayout = () => {
 
   return (
     <>
-      <Sidebar />
-      <main className="lg:pl-64">
-        <Header />
+      <Header />
+      <main className="lg:pl-72 md:py-[35px] py-[22px] px-4 sm:px-6 lg:px-[30px]">
         <Routes>
           <Route path="" element={<Outlet />}>
             <Route index element={<Dashboard />} />
@@ -33,6 +32,7 @@ const MainLayout = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <Sidebar />
     </>
   );
 };

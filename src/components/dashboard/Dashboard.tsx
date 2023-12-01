@@ -1,9 +1,10 @@
-import UsersTable from "../user-table/UsersTable";
+import { useUser } from "../../shared/provider/user-provider/UserProvider";
 
 const Dashboard = () => {
+  const { user }: any = useUser();
   return (
     <>
-      <UsersTable />
+      <p>Welcome to {user?.email}!</p>
     </>
   );
 };

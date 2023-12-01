@@ -3,7 +3,6 @@ import Cookies from "js-cookie";
 import { TOKEN } from "./constant";
 
 const getItemFromCookie = (key: string) => {
-  console.log(Cookies.get(key));
   return Cookies.get(key);
 };
 

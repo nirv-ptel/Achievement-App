@@ -1,18 +1,21 @@
-// import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useUser } from "../../../shared/provider/user-provider/UserProvider";
-// import FormLabel from "../../../shared/form-control/FormLabel";
-// import FormInput from "../../../shared/form-control/FormInput";
+
+import useProfileForm from "../hooks/useProfileForm";
+import useUpdateProfile from "../hooks/useUpdateProfile";
+
+import FormLabel from "../../../shared/form-control/FormLabel";
+import FormInput from "../../../shared/form-control/FormInput";
+import Button from "../../../shared/button/Button";
+import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 
 const Profile = () => {
-  //   const user = useUser();
   const navigation = useNavigate();
 
-  //   const [changePasswordModal, setChangePasswordModal] = useState(false);
+  const { mutate: updateProfileFn, isLoading } = useUpdateProfile();
 
-  //   const handleChangePasswordModal = () => {
-  //     setChangePasswordModal(!changePasswordModal);
-  //   };
+  const { handleSubmit, values, handleChange } = useProfileForm(() => {
+    updateProfileFn(values);
+  });
 
   return (
     <>
@@ -22,53 +25,31 @@ const Profile = () => {
         }
       >
         <button
-          className="rounded-md border-[0.05rem] border-quillgrey py-2 px-1.5"
+          className="rounded-md py-2 px-1.5"
           onClick={() => navigation(-1)}
         >
-          back
+          <ArrowLeftIcon className="h-6 w-6" aria-hidden="true" />
         </button>
-        <p className="text-2xl text-blackolive font-inter-semibold">Profile</p>
+        <p className="text-2xl text-blackolive">Profile</p>
       </div>
-      {/* <form onSubmit={handleSubmit} className="max-w-[37.75rem]">
+      <form onSubmit={handleSubmit} className="max-w-[37.75rem]">
         <div className="form-group mb-6">
-          <FormLabel title="Name" className="!font-medium" />
+          <FormLabel title="Email" className="!font-medium mb-1" />
           <FormInput
-            value={values.name}
-            type="text"
-            onChange={handleChange}
-            name="name"
-          />
-        </div>
-        <div className="form-group">
-          <FormLabel title="Email Address" className="!font-medium" />
-          <FormInput
-            value={user?.email}
+            value={values?.email}
             type="text"
             onChange={handleChange}
             name="email"
-            className="bg-[#EAEDF0] pointer-events-none"
           />
         </div>
-        <Link
-          className="font-medium text-sm leading-6 text-indigo-600 hover:text-indigo-500 underline"
-          to={""}
-          onClick={handleChangePasswordModal}
-        >
-          Change Password
-        </Link>
         <Button
           type="submit"
           title="Save"
           loader={isLoading}
           disabled={isLoading}
-          className="px-14 mt-11 ml-auto"
+          className="px-14 ml-auto"
         />
       </form>
-      <ModalPortal open={changePasswordModal}>
-        <ChangePasswordModal
-          handleChangePasswordModal={handleChangePasswordModal}
-        />
-      </ModalPortal> */}
     </>
   );
 };

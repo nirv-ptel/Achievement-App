@@ -9,12 +9,11 @@ const useLogin = () => {
 
   return useMutation((data: LoginFormProps) => signin(data), {
     onSuccess: () => {
-      console.log("meert :: first");
-      toast("Login successful!", { type: "success" });
+      toast.success("Login successful!");
       navigate("/");
     },
     onError: () => {
-      console.log("error");
+      toast.error("Login unsuccessful!");
     },
   });
 };

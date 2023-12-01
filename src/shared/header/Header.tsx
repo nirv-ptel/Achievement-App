@@ -3,14 +3,21 @@ import { removeItemInCookie } from "../helper/util";
 import { TOKEN } from "../helper/constant";
 import { Menu, Transition } from "@headlessui/react";
 import useOutsideClick from "../hooks/useOutsideClick";
-import Button from "../button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const profileRef = useRef(null);
 
-  const onClickMenu = () => {
+  const navigate = useNavigate();
+
+  const onClickProfile = () => {
+    navigate(`/profile`);
+    setMenuOpen(false);
+  };
+
+  const onClickLogout = () => {
     removeItemInCookie(TOKEN);
     navigate("/login");
     setMenuOpen(false);
@@ -30,7 +37,7 @@ const Header = () => {
               className="-m-1.5 flex items-center p-1.5"
               onClick={() => setMenuOpen(!menuOpen)}
             >
-              U
+              Y
             </Menu.Button>
             <Transition
               as={Fragment}
@@ -48,24 +55,22 @@ const Header = () => {
                     <>
                       <button
                         type="button"
-                        onClick={() => {
-                          setMenuOpen(false);
-                        }}
+                        onClick={() => onClickProfile()}
                         className={
                           "flex items-center gap-2 px-4 py-2 text-sm leading-6 text-gray-900 w-full text-left hover:bg-[#eee] capitalize transition"
                         }
                       >
                         Profile
                       </button>
-                      <Button
+                      <button
                         type={"button"}
-                        title={"Logout"}
-                        variant="secondary"
                         onClick={() => onClickLogout()}
                         className={
-                          "flex items-center gap-2 px-4 py-2 text-sm leading-6 text-gray-900 w-full text-left hover:bg-[#eee] transition"
+                          "flex items-center gap-2 px-4 py-2 text-sm leading-6 text-gray-900 w-full text-left hover:bg-[#eee] capitalize transition"
                         }
-                      />
+                      >
+                        Logout
+                      </button>
                     </>
                   )}
                 </Menu.Item>

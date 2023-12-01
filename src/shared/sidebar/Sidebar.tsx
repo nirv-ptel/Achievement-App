@@ -3,6 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { navigation } from "../helper/sidebar";
 import { Link, useLocation } from "react-router-dom";
 import clsx from "clsx";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 
 // import { ReactComponent as CompanyLogo } from "../../assets/images/logo.svg";
 
@@ -28,7 +29,8 @@ const Sidebar = () => {
         className="p-2.5 text-gray-700 lg:hidden absolute top-[10px] left-2 z-[111]"
         onClick={() => setSidebarOpen(true)}
       >
-        <span className="sr-only">Open sidebar</span>=
+        <span className="sr-only">Open sidebar</span>
+        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
       </button>
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -91,7 +93,7 @@ const Sidebar = () => {
                             {navigation.map((item) => (
                               <li key={item.name}>
                                 <Link
-                                  to={""}
+                                  to={item.href}
                                   className={clsx("sidebarList", {
                                     sidebarListActive: routeCheck(
                                       item.activeMenu
@@ -128,7 +130,7 @@ const Sidebar = () => {
           <div className="flex grow flex-col gap-y-2 overflow-y-auto border-r border-gray-200 bg-white px-4 pb-4">
             <div className="flex h-16 shrink-0 items-center">
               <h2 className="ml-[10px] text-gray-800 text-xl font-semibold">
-                Logo
+                Lorem
               </h2>
             </div>
             <nav className="flex flex-1 flex-col">
@@ -138,7 +140,7 @@ const Sidebar = () => {
                     {navigation.map((item) => (
                       <li key={item.name}>
                         <Link
-                          to={""}
+                          to={item.href}
                           className={clsx("sidebarList", {
                             sidebarListActive: routeCheck(item.activeMenu),
                           })}
