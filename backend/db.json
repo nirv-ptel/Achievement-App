@@ -1,7 +1,7 @@
 {
   "me": {
-    "email": "viral.radicalloop@gmail.com",
-    "password": "123456"
+    "email": "admin@tol.com",
+    "password": "12345678"
   },
   "users": [
     {
@@ -35,38 +35,48 @@
       "email": "cunuxi@mailinator.com",
       "role": "Consectetur aut quia",
       "address": "Itaque sit harum asp"
-    },
-    {
-      "id": "9JnSMV0",
-      "name": "Heather Fields",
-      "number": "422",
-      "email": "cupymuju@mailinator.com",
-      "role": "Temporibus eum ut do",
-      "address": "Libero exercitatione"
-    },
-    {
-      "id": "-gXDbCH",
-      "name": "hardik Brewer",
-      "number": "228",
-      "email": "pasu@mailinator.com",
-      "role": "Enim amet id dolore",
-      "address": "hardik delectus eve"
-    },
-    {
-      "id": "njwo3bC",
-      "name": "Yasir Hodges",
-      "number": "144",
-      "email": "roxisylip@mailinator.com",
-      "role": "Totam qui voluptatem",
-      "address": "Irure atque minus ei"
-    },
-    {
-      "id": "GwkBAmj",
-      "name": "Madeson Witt",
-      "number": "522",
-      "email": "coki@mailinator.com",
-      "role": "Et commodo exercitat",
-      "address": "Temporibus nisi fuga"
     }
-  ]
+  ],
+  "data": [
+    {
+        "_id": "6572a2c130314b1382edbb5d",
+        "type": "products",
+        "status": "error",
+        "reason": "Model has been trained successfully",
+        "created_at": "2023-12-07T07:53:18.000Z",
+        "finished_at": "2023-12-07T08:05:16.000Z",
+        "__v": 0,
+        "id": "6572a2c130314b1382edbb5d"
+    }, 
+    {
+        "_id": "6572a2c130314b1382edbb55",
+        "type": "products",
+        "status": "started",
+        "reason": "Model has been trained successfully",
+        "created_at": "2023-12-07T07:53:18.000Z",
+        "finished_at": "2023-12-07T08:05:16.000Z",
+        "__v": 0,
+        "id": "6572a2c130314b1382edbb55"
+    },
+    {
+        "_id": "6572a2c130314b1382edbb57",
+        "type": "products",
+        "status": "error",
+        "reason": "Model has been trained successfully",
+        "created_at": "2023-12-07T07:53:18.000Z",
+        "finished_at": "2023-12-07T08:05:16.000Z",
+        "__v": 0,
+        "id": "6572a2c130314b1382edbb57"
+    },
+    {
+        "_id": "6572a2c130314b1382edbb5b",
+        "type": "products",
+        "status": "started",
+        "reason": "Model has been trained successfully",
+        "created_at": "2023-12-07T07:53:18.000Z",
+        "finished_at": "2023-12-07T08:05:16.000Z",
+        "__v": 0,
+        "id": "6572a2c130314b1382edbb5b"
+    }
+    ]
 }

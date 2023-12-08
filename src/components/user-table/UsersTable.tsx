@@ -9,6 +9,7 @@ import AddUsersModal from "../user-table/AddUsersModal";
 import useUserTable from "./hooks/useUserTable";
 import ConfirmationUsersModal from "./ConfirmationUsersModal";
 import useDeleteUsers from "./hooks/useDeleteUsers";
+import Pagination from "../../shared/pagination/Pagination";
 
 const UsersTable = () => {
   const { data } = useUserTable();
@@ -142,6 +143,7 @@ const UsersTable = () => {
           </table>
         </div>
       </div>
+      <Pagination />
       <ModalPortal open={isAddUsersModalOpen}>
         <AddUsersModal
           data={usersDataState}

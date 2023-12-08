@@ -7,6 +7,7 @@ import NotFound from "./shared/not-found/NotFound";
 import Profile from "./components/profile/components/Profile";
 import { useUser } from "./shared/provider/user-provider/UserProvider";
 import Loader from "./shared/loader/Loader";
+import TanstackTable from "./components/tanstack-table/components/TanstackTable";
 
 const MainLayout = () => {
   const { isFetching }: any = useUser();
@@ -27,6 +28,7 @@ const MainLayout = () => {
           <Route path="" element={<Outlet />}>
             <Route index element={<Dashboard />} />
             <Route path="users" element={<UsersTable />} />
+            <Route path="tanstack-table" element={<TanstackTable />} />
             <Route path="profile" element={<Profile />} />
           </Route>
           <Route path="*" element={<NotFound />} />

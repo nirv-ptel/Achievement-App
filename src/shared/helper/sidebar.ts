@@ -1,4 +1,9 @@
-import { BoltIcon, BookOpenIcon, HomeIcon } from "@heroicons/react/24/outline";
+import {
+  BoltIcon,
+  BookOpenIcon,
+  HomeIcon,
+  ViewfinderCircleIcon,
+} from "@heroicons/react/24/outline";
 
 export const navigation = [
   {
@@ -24,5 +29,13 @@ export const navigation = [
     current: false,
     action: "IMAGES",
     activeMenu: "/images",
+  },
+  {
+    name: "Tanstack Table",
+    href: "/tanstack-table",
+    icon: ViewfinderCircleIcon,
+    current: false,
+    action: "TRAINING_LOGS",
+    activeMenu: "/tanstack-table",
   },
 ];

@@ -136,3 +136,52 @@ max-height: calc(100vh - 212px);
 .button_hover:hover {
   @apply text-gray-300;
 }
+
+
+/* Style for pagination */
+
+.pagination {
+  @apply flex items-center justify-end mt-3;
+}
+
+.pagination span {
+  @apply text-blackolive;
+}
+
+.pagination ul {
+  @apply flex items-center;
+}
+
+.pagination ul li button,
+.pagination button,
+.pagination .page-link,
+.pagination ul li button:not(:disabled) {
+  @apply border border-quillgrey px-4 py-2 text-aurometalaaurus font-medium hover:bg-[#f3f3f3] h-10;
+}
+.pagination-is-active a {
+  @apply bg-gray-100 border !border-gray-600 !text-gray-600;
+}
+.pagination .page-item:first-child .page-link[rel="prev"],
+.pagination .page-item:last-child .page-link[rel="next"] {
+  @apply px-0 border-0 hover:bg-transparent;
+}
+.pagination .page-item:first-child .page-link[rel="prev"] button {
+  @apply h-[35px] rounded-tr-none rounded-br-none;
+}
+.pagination .page-item:last-child .page-link[rel="next"] button {
+  @apply h-[35px] rounded-tl-none rounded-bl-none;
+}
+
+.pagination ul li:first-child button {
+  @apply rounded-l-md text-aurometalaaurus;
+}
+.pagination ul li button:disabled svg {
+  @apply opacity-30;
+}
+.pagination ul li button:disabled {
+  @apply !bg-[#EAEDF0];
+}
+
+.pagination ul li:last-child button {
+  @apply rounded-r-md text-aurometalaaurus;
+}
