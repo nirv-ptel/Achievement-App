@@ -5,16 +5,19 @@ import {
   Routes,
   Outlet,
 } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import MainLayout from "./MainLayout";
 import withAuthentication from "./shared/hoc/withAuthentication";
 import withoutAuthentication from "./shared/hoc/withoutAuthentication";
-import Login from "./shared/auth/Login";
+import { UserProvider } from "./shared/provider/user-provider/UserProvider";
+
+import Login from "./shared/auth/components/Login";
+import NotFound from "./shared/not-found/NotFound";
 import Dashboard from "./components/dashboard/Dashboard";
 
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import { UserProvider } from "./shared/provider/user-provider/UserProvider";
-import NotFound from "./shared/not-found/NotFound";
 
 function App() {
   const queryClient = new QueryClient();
@@ -29,15 +32,17 @@ function App() {
         <UserProvider>
           <Router>
             <Routes>
-              <Route path="/*" element={withAuthentication(MainLayout)} />
-              <Route element={withoutAuthentication(UnAuthenticatedApp)}>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="login" element={<Login />} />
+              <Route path="/*" element={withAuthentication(MainLayout)}>
+                <Route path={"users"} element={<Dashboard />} />
               </Route>
-              <Route path="*" element={<NotFound />} />
+              <Route element={withoutAuthentication(UnAuthenticatedApp)}>
+                <Route path="login" element={<Login />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
             </Routes>
           </Router>
         </UserProvider>
+        <ToastContainer />
       </QueryClientProvider>
     </>
   );

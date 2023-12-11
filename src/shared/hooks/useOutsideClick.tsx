@@ -12,9 +12,9 @@ function useOutsideClick<T extends HTMLElement>(
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => handleClickOutside(event);
-    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("click", handleClick);
     return () => {
-      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("click", handleClick);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -1,115 +1,82 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
+  "me": {
+    "email": "admin@tol.com",
+    "password": "12345678"
+  },
   "users": [
     {
-      "id": "2741a30e-552f-471b-b542-ff48bc88a6b4",
-      "name": "bbbbb himMontoya",
-      "number": "868",
-      "email": "bbbb@mailinator.com",
-      "role": "Repudiandae aliquip ",
-      "address": "euro impedit dolor"
+      "id": "B4ZMHdR",
+      "name": "Demetria Holmes",
+      "number": "797",
+      "email": "duxugow@mailinator.com",
+      "role": "Commodi qui culpa e",
+      "address": "Ab quibusdam nisi qu"
     },
     {
-      "id": "5Wgd8uL",
-      "name": "Dillon Bolton",
-      "number": "464",
-      "email": "buwupoxo@mailinator.com",
-      "role": "Iste sit quo qui nih",
-      "address": "rrrrummm voluptas reprehe"
+      "id": "sPbE3IW",
+      "name": "Emerson Middleton",
+      "number": "731",
+      "email": "bugyquge@mailinator.com",
+      "role": "Quo omnis molestiae ",
+      "address": "Eos tempora ut conse"
     },
     {
-      "id": "UsfKnvN",
-      "name": "Leilani Ryan",
-      "number": "864",
-      "email": "bamukicuw@mailinator.com",
-      "role": "Nam quasi natus tota",
-      "address": "Tempora quo ut corpo"
+      "id": "QL-FQc9",
+      "name": "Branden Robertson",
+      "number": "411",
+      "email": "vafoges@mailinator.com",
+      "role": "Fuga Quia similique",
+      "address": "Consequat Sit cupid"
     },
     {
-      "id": "ONLN_wL",
-      "name": "Maris Snider",
-      "number": "972",
-      "email": "xilywarix@mailinator.com",
-      "role": "Ab accusamus numquam",
-      "address": "Porro dolorem qui nu"
-    },
-    {
-      "id": "ILj3H2u",
-      "name": "Craig Hester",
-      "number": "409",
-      "email": "foqokavo@mailinator.com",
-      "role": "Consequatur quo aliq",
-      "address": "Nulla rerum quaerat "
-    },
-    {
-      "id": "YU_w_el",
-      "name": "Rashad Russo",
-      "number": "904",
-      "email": "kuxelu@mailinator.com",
-      "role": "Sed pariatur Aliqua",
-      "address": "Nulla nostrum minima"
-    },
-    {
-      "id": "vc9eMrN",
-      "name": "Y Gillian Cardenas",
-      "number": "284",
-      "email": "cehuqe@mailinator.com",
-      "role": "Natus beatae proiden",
-      "address": "Et ex aliqua Volupt"
-    },
-    {
-      "id": "okuuMZP",
-      "name": "ZZ Vernon Watkins",
-      "number": "237",
-      "email": "Zquxove@mailinator.com",
-      "role": "Voluptas quo quisqua",
-      "address": "Velit magni dignissi"
-    },
-    {
-      "id": "468d4cd3-f5f1-49be-b28f-fd304a18c99e",
-      "name": "Lila Black",
-      "number": "423",
-      "email": "buwax@mailinator.com",
-      "role": "Eveniet voluptatem ",
-      "address": "Eius quam exercitati"
-    },
-    {
-      "id": "DLfbR1m",
-      "name": "MacKensie Mccray",
-      "number": "116",
-      "email": "xynoze@mailinator.com",
-      "role": "Eligendi est blandi",
-      "address": "Elit qui maiores no"
-    },
-    {
-      "id": "KfOLnv-",
-      "name": "Philips Sears",
-      "number": "811",
-      "email": "phips@mailinator.com",
-      "role": "phisp[ss cum non pariatur",
-      "address": "Consectetur omnis co"
-    },
-    {
-      "id": "VR1uCpW",
-      "name": "yesss Gonzalez",
-      "number": "105",
-      "email": "yesxusizo@mailinator.com",
-      "role": "yes Eaque vel inventore ",
-      "address": "yes Ut unde dolor quibus"
-    },
-    {
-      "id": "NZra2mv",
-      "name": "Diana Chandler",
-      "number": "136",
-      "email": "pufapuboqu@mailinator.com",
-      "role": "Voluptas aperiam mag",
-      "address": "Neque ut laborum qui"
+      "id": "9ZwSSrV",
+      "name": "Brendan Gutierrez",
+      "number": "122",
+      "email": "cunuxi@mailinator.com",
+      "role": "Consectetur aut quia",
+      "address": "Itaque sit harum asp"
     }
-  ]
+  ],
+  "data": [
+    {
+        "_id": "6572a2c130314b1382edbb5d",
+        "type": "products",
+        "status": "error",
+        "reason": "Model has been trained successfully",
+        "created_at": "2023-12-07T07:53:18.000Z",
+        "finished_at": "2023-12-07T08:05:16.000Z",
+        "__v": 0,
+        "id": "6572a2c130314b1382edbb5d"
+    }, 
+    {
+        "_id": "6572a2c130314b1382edbb55",
+        "type": "products",
+        "status": "started",
+        "reason": "Model has been trained successfully",
+        "created_at": "2023-12-07T07:53:18.000Z",
+        "finished_at": "2023-12-07T08:05:16.000Z",
+        "__v": 0,
+        "id": "6572a2c130314b1382edbb55"
+    },
+    {
+        "_id": "6572a2c130314b1382edbb57",
+        "type": "products",
+        "status": "error",
+        "reason": "Model has been trained successfully",
+        "created_at": "2023-12-07T07:53:18.000Z",
+        "finished_at": "2023-12-07T08:05:16.000Z",
+        "__v": 0,
+        "id": "6572a2c130314b1382edbb57"
+    },
+    {
+        "_id": "6572a2c130314b1382edbb5b",
+        "type": "products",
+        "status": "started",
+        "reason": "Model has been trained successfully",
+        "created_at": "2023-12-07T07:53:18.000Z",
+        "finished_at": "2023-12-07T08:05:16.000Z",
+        "__v": 0,
+        "id": "6572a2c130314b1382edbb5b"
+    }
+    ]
 }

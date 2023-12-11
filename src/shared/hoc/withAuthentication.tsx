@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { TOKEN } from "../helper/constant";
+import { ACCESS_TOKEN, TOKEN } from "../helper/constant";
 import { getItemFromCookie } from "../helper/util";
 import { UserProvider } from "../provider/user-provider/UserProvider";
 
