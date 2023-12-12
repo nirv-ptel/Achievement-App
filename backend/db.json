@@ -35,48 +35,64 @@
       "email": "cunuxi@mailinator.com",
       "role": "Consectetur aut quia",
       "address": "Itaque sit harum asp"
+    },
+    {
+      "id": "86261cbe-95b4-4946-a3ce-e84d3d94463f",
+      "name": "Hasad Rocha",
+      "number": "94",
+      "email": "dyhe@mailinator.com",
+      "role": "Nemo amet qui ad in",
+      "address": "Delectus quia sint "
+    },
+    {
+      "id": "2805c331-4fae-4890-88d2-85273cb8fbf2",
+      "name": "Madeson Harding",
+      "number": "388",
+      "email": "wutahew@mailinator.com",
+      "role": "Nostrum amet tempor",
+      "address": "Sint deserunt deleni"
     }
   ],
   "data": [
     {
-        "_id": "6572a2c130314b1382edbb5d",
-        "type": "products",
-        "status": "error",
-        "reason": "Model has been trained successfully",
-        "created_at": "2023-12-07T07:53:18.000Z",
-        "finished_at": "2023-12-07T08:05:16.000Z",
-        "__v": 0,
-        "id": "6572a2c130314b1382edbb5d"
-    }, 
-    {
-        "_id": "6572a2c130314b1382edbb55",
-        "type": "products",
-        "status": "started",
-        "reason": "Model has been trained successfully",
-        "created_at": "2023-12-07T07:53:18.000Z",
-        "finished_at": "2023-12-07T08:05:16.000Z",
-        "__v": 0,
-        "id": "6572a2c130314b1382edbb55"
+      "_id": "6572a2c130314b1382edbb5d",
+      "type": "products",
+      "status": "error",
+      "reason": "Model has been trained successfully",
+      "created_at": "2023-12-07T07:53:18.000Z",
+      "finished_at": "2023-12-07T08:05:16.000Z",
+      "__v": 0,
+      "id": "6572a2c130314b1382edbb5d"
     },
     {
-        "_id": "6572a2c130314b1382edbb57",
-        "type": "products",
-        "status": "error",
-        "reason": "Model has been trained successfully",
-        "created_at": "2023-12-07T07:53:18.000Z",
-        "finished_at": "2023-12-07T08:05:16.000Z",
-        "__v": 0,
-        "id": "6572a2c130314b1382edbb57"
+      "_id": "6572a2c130314b1382edbb55",
+      "type": "products",
+      "status": "started",
+      "reason": "Model has been trained successfully",
+      "created_at": "2023-12-07T07:53:18.000Z",
+      "finished_at": "2023-12-07T08:05:16.000Z",
+      "__v": 0,
+      "id": "6572a2c130314b1382edbb55"
     },
     {
-        "_id": "6572a2c130314b1382edbb5b",
-        "type": "products",
-        "status": "started",
-        "reason": "Model has been trained successfully",
-        "created_at": "2023-12-07T07:53:18.000Z",
-        "finished_at": "2023-12-07T08:05:16.000Z",
-        "__v": 0,
-        "id": "6572a2c130314b1382edbb5b"
+      "_id": "6572a2c130314b1382edbb57",
+      "type": "products",
+      "status": "error",
+      "reason": "Model has been trained successfully",
+      "created_at": "2023-12-07T07:53:18.000Z",
+      "finished_at": "2023-12-07T08:05:16.000Z",
+      "__v": 0,
+      "id": "6572a2c130314b1382edbb57"
+    },
+    {
+      "_id": "6572a2c130314b1382edbb5b",
+      "type": "products",
+      "status": "started",
+      "reason": "Model has been trained successfully",
+      "created_at": "2023-12-07T07:53:18.000Z",
+      "finished_at": "2023-12-07T08:05:16.000Z",
+      "__v": 0,
+      "id": "6572a2c130314b1382edbb5b"
     }
-    ]
+  ]
 }

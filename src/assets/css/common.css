@@ -185,3 +185,12 @@ max-height: calc(100vh - 212px);
 .pagination ul li:last-child button {
   @apply rounded-r-md text-aurometalaaurus;
 }
+
+/* styles for user table  */
+.css-b62m3t-container {
+  @apply w-[27rem];
+}
+
+.user-select__menu {
+  @apply !z-[11];
+}
