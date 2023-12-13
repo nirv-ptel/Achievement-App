@@ -69,9 +69,10 @@ const UsersTable = () => {
     label: string;
   } | null>(null);
 
-  const handleSortChange = (
-    selectedOption: { value: string; label: string } | null
-  ) => {
+  const handleSortChange = (selectedOption: {
+    value: string;
+    label: string;
+  }) => {
     setSelectedSortOption(selectedOption);
   };
 

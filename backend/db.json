@@ -1,6 +1,6 @@
 {
   "me": {
-    "email": "admin@tol.com",
+    "email": "hardik@tol.com",
     "password": "12345678"
   },
   "users": [
@@ -51,6 +51,22 @@
       "email": "wutahew@mailinator.com",
       "role": "Nostrum amet tempor",
       "address": "Sint deserunt deleni"
+    },
+    {
+      "id": "f955b17d-837c-4be7-a210-e51c10916a41",
+      "name": "Kitra Summers",
+      "number": "714",
+      "email": "qahiz@mailinator.com",
+      "role": "Sunt ea cum praesen",
+      "address": "Sit sed sint ad fac"
+    },
+    {
+      "id": "86eb77a0-b875-4cdb-a7ee-04d43e720d65",
+      "name": "Guy Rose",
+      "number": "912",
+      "email": "jozesuda@mailinator.com",
+      "role": "Praesentium eaque ma",
+      "address": "Fugiat dolor dolore "
     }
   ],
   "data": [
