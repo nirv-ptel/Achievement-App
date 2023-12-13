@@ -1,8 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { memo, useEffect, useMemo, useState } from "react";
+import React, { memo, useMemo, useState } from "react";
 import clsx from "clsx";
-import { JSX } from "react/jsx-runtime";
 
 import {
   ColumnFiltersState,
@@ -13,16 +12,12 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import Select, { GroupBase, OptionProps, components } from "react-select";
 
 import Loader from "../loader/Loader";
-import Pagination from "../pagination/Pagination";
-import { CheckBadgeIcon } from "@heroicons/react/24/outline";
 
 function CommonDataTable({
   columns,
   response,
-  refetchFn,
   isLoading,
   hiddenColumns = {},
 }: any) {
@@ -44,35 +39,35 @@ function CommonDataTable({
 
   const [sorting, setSorting] = useState<any>([]);
 
-  const prepareQueryForFilters = () => {
-    const search = columnFilters.map((search: any) => {
-      return {
-        field: search.id === "user" ? "userId" : search.id,
-        query: search.value,
-        type: typeof search.value === "boolean" ? "EXACT" : "LIKE",
-      };
-    });
+  // const prepareQueryForFilters = () => {
+  //   const search = columnFilters.map((search: any) => {
+  //     return {
+  //       field: search.id === "user" ? "userId" : search.id,
+  //       query: search.value,
+  //       type: typeof search.value === "boolean" ? "EXACT" : "LIKE",
+  //     };
+  //   });
 
-    const sortingQuery = {
-      order: sorting[0]?.desc ? "DESC" : "ASC",
-      field: sorting[0]?.id,
-    };
+  //   const sortingQuery = {
+  //     order: sorting[0]?.desc ? "DESC" : "ASC",
+  //     field: sorting[0]?.id,
+  //   };
 
-    const result: any = {};
+  //   const result: any = {};
 
-    if (search.length > 0) {
-      result.search = search;
-    }
+  //   if (search.length > 0) {
+  //     result.search = search;
+  //   }
 
-    if (pageIndex + 1 > 0) {
-      result.paginate = { page: pageIndex + 1, limit: pageSize };
-    }
+  //   if (pageIndex + 1 > 0) {
+  //     result.paginate = { page: pageIndex + 1, limit: pageSize };
+  //   }
 
-    if (sorting.length > 0) {
-      result.sorting = sortingQuery;
-    }
-    return result;
-  };
+  //   if (sorting.length > 0) {
+  //     result.sorting = sortingQuery;
+  //   }
+  //   return result;
+  // };
 
   const resetPage = () => {
     setPagination({ pageIndex: 0, pageSize });
@@ -107,34 +102,34 @@ function CommonDataTable({
   });
 
   // useEffect(() => {
-  //   refetchFn(prepareQueryForFilters());
+  //   refetchFn();
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, [sorting, pageIndex, columnFilters, pageSize]);
 
-  const records = useMemo(() => {
-    if (!response || response.length === 0) {
-      return null;
-    }
-    const limit = response.limit;
-    const page = response.page;
+  // const records = useMemo(() => {
+  //   if (!response || response.length === 0) {
+  //     return null;
+  //   }
+  //   const limit = response.limit;
+  //   const page = response.page;
 
-    const startRecord =
-      response?.totalDocs == 0 ? (page - 1) * limit : (page - 1) * limit + 1;
-    const endRecord = Math.min(page * limit, response?.totalDocs);
+  //   const startRecord =
+  //     response?.totalDocs == 0 ? (page - 1) * limit : (page - 1) * limit + 1;
+  //   const endRecord = Math.min(page * limit, response?.totalDocs);
 
-    return { startRecord, endRecord };
-  }, [response]);
+  //   return { startRecord, endRecord };
+  // }, [response]);
 
-  const CustomOption = (
-    props: JSX.IntrinsicAttributes &
-      OptionProps<unknown, boolean, GroupBase<unknown>>
-  ) => (
-    <components.Option {...props}>
-      <div className="flex justify-between">
-        {props.label} {props.isSelected && <CheckBadgeIcon />}
-      </div>
-    </components.Option>
-  );
+  // const CustomOption = (
+  //   props: JSX.IntrinsicAttributes &
+  //     OptionProps<unknown, boolean, GroupBase<unknown>>
+  // ) => (
+  //   <components.Option {...props}>
+  //     <div className="flex justify-between">
+  //       {props.label} {props.isSelected && <CheckBadgeIcon />}
+  //     </div>
+  //   </components.Option>
+  // );
 
   return (
     <div>
@@ -230,7 +225,7 @@ function CommonDataTable({
         </table>
       </div>
       <div className="flex items-center gap-3 mt-3">
-        {records && (
+        {/* {records && (
           <>
             <span> Rows per page</span>
             <Select
@@ -249,7 +244,7 @@ function CommonDataTable({
               {records.startRecord}-{records.endRecord} of {response?.totalDocs}
             </span>
           </>
-        )}
+        )} */}
         {/* <Pagination
           pageIndex={pageIndex}
           table={table}
