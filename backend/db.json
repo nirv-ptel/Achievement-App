@@ -1,8 +1,46 @@
 {
   "me": {
-    "email": "hardik@tol.com",
-    "password": "12345678"
+    "email": "viral.radicalloop@gmail.com",
+    "password": "123456"
   },
+  "register": [
+    {
+      "username": "wwwww",
+      "email": "test@test.com",
+      "password": "11111111111111111111",
+      "id": "8lwx_J4"
+    },
+    {
+      "username": "tata",
+      "email": "tata@gmail.com",
+      "password": "12345678",
+      "id": "RrWCUkH"
+    },
+    {
+      "username": "admin",
+      "email": "admin@tol.com",
+      "password": "213213213213213213213213",
+      "id": "QQMZx5c"
+    },
+    {
+      "username": "admin@tol.com",
+      "email": "yash.radicalloop@gmail.com",
+      "password": "122132132132132121321",
+      "id": "daoxo_y"
+    },
+    {
+      "username": "admin",
+      "email": "admin@tol.com",
+      "password": "12345678",
+      "id": "KM-Ea1I"
+    },
+    {
+      "username": "Raj",
+      "email": "Raj@gmail.com",
+      "password": "12345678",
+      "id": "rFt2Nkx"
+    }
+  ],
   "users": [
     {
       "id": "B4ZMHdR",
@@ -109,6 +147,12 @@
       "finished_at": "2023-12-07T08:05:16.000Z",
       "__v": 0,
       "id": "6572a2c130314b1382edbb5b"
+    },
+    {
+      "username": "viral.radicalloop@gmail.com",
+      "email": " radicalloopdev@gmail.com",
+      "password": "123456qqqqq",
+      "id": "NkeZKe3"
     }
   ]
 }

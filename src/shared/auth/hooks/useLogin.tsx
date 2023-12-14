@@ -1,13 +1,13 @@
 import { useMutation } from "react-query";
-import { signin } from "../api";
 import { LoginFormProps } from "../types";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { signIn } from "../api";
 
 const useLogin = () => {
   const navigate = useNavigate();
 
-  return useMutation((data: LoginFormProps) => signin(data), {
+  return useMutation((data: LoginFormProps) => signIn(data), {
     onSuccess: () => {
       toast.success("Login successful!");
       navigate("/");

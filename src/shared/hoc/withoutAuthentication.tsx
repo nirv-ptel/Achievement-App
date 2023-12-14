@@ -7,7 +7,6 @@ const withoutAuthentication = (WrapedComponent: () => JSX.Element) => {
     if (!getItemFromCookie(TOKEN)) {
       return <WrapedComponent />;
     }
-    console.log("withoutAuthentication");
     return <Navigate to={`/`} />;
   };
 

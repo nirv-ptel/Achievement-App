@@ -18,6 +18,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import SignUp from "./shared/auth/components/SignUp";
 
 function App() {
   const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ function App() {
               </Route>
               <Route element={withoutAuthentication(UnAuthenticatedApp)}>
                 <Route path="login" element={<Login />} />
+                <Route path="signup" element={<SignUp />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>

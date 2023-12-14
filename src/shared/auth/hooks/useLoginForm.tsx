@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useFormik } from "formik";
-import { loginSchema } from "../auth/validation";
+import { loginSchema } from "../validation";
 import Cookies from "js-cookie";
-import { ACCESS_TOKEN, TOKEN } from "../helper/constant";
+import { ACCESS_TOKEN, TOKEN } from "../../helper/constant";
 
 interface LoginFormProps {
   email: string;

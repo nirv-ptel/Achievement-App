@@ -2,7 +2,7 @@
 
 import Button from "../../button/Button";
 import useLogin from "../hooks/useLogin";
-import { useLoginForm } from "../../hooks/useLoginForm";
+import { useLoginForm } from "../hooks/useLoginForm";
 
 import authStyle from "../../../assets/css/auth.module.css";
 

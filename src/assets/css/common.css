@@ -37,6 +37,16 @@ font-family: "Inter", sans-serif;
   @apply bg-[#555];
 }
 
+/* form  */
+
+.form-group {
+  @apply mb-5;
+}
+
+.form-group label {
+  @apply mb-1;
+}
+
 /* Styles for sidebar */
 
 .sidebarList {
