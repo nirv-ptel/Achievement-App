@@ -1,6 +1,5 @@
 import api from "../api";
 import { ACCESS_TOKEN } from "../helper/constant";
-import { setToken } from "../helper/util";
 import { LoginFormProps, SignupRequestParams } from "./types";
 
 export const me = () => {
@@ -8,15 +7,15 @@ export const me = () => {
 };
 
 export const signUp = (data: SignupRequestParams) => {
-  return api.post("/register", data);
+  return api.post("/login", data);
 };
 
-export const signIn = (data: LoginFormProps) => {
-  return api.post("/me", data).then(() => {
-    setToken(ACCESS_TOKEN);
-  });
+export const signIn = async (data: LoginFormProps) => {
+  const users = await api.get("/users-list");
+  const user = await users.data.find((user: any) => user.email === data.email);
+  if (user) {
+    return { data: ACCESS_TOKEN };
+  } else {
+    return Promise.reject(new Error("User not found"));
+  }
 };
-
-// export const getCurrentUser = () => {
-//   return api.get("/auth-user");
-// };

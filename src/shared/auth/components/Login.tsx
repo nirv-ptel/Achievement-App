@@ -9,10 +9,8 @@ import authStyle from "../../../assets/css/auth.module.css";
 const Login = () => {
   const { mutate: loginMutation } = useLogin();
 
-  const { handleChange, handleSubmit, errors, values } = useLoginForm(
-    (email: any, password: any) => {
-      loginMutation({ email, password });
-    }
+  const { handleChange, handleSubmit, errors, values } = useLoginForm(() =>
+    loginMutation(values)
   );
 
   return (

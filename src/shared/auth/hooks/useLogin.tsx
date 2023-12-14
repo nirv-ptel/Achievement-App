@@ -3,17 +3,18 @@ import { LoginFormProps } from "../types";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { signIn } from "../api";
+import { setToken } from "../../helper/util";
 
 const useLogin = () => {
   const navigate = useNavigate();
 
   return useMutation((data: LoginFormProps) => signIn(data), {
-    onSuccess: () => {
-      toast.success("Login successful!");
+    onSuccess: (res) => {
+      setToken(res.data);
       navigate("/");
     },
-    onError: () => {
-      toast.error("Login unsuccessful!");
+    onError: (error: any) => {
+      toast.error(error.message);
     },
   });
 };

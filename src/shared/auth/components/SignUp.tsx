@@ -4,18 +4,11 @@ import Button from "../../button/Button";
 import useSignup from "../hooks/useSignup";
 
 import { useSignupForm } from "../hooks/useSignupForm";
-// import { getCurrentUser } from "../api";
 import FormLabel from "../../form-control/FormLabel";
 import FormInput from "../../form-control/FormInput";
 import FormError from "../../form-control/FormError";
 
 const SignUp = () => {
-  // const { data: response } = useQuery(["get-users"], () => {
-  //   getCurrentUser();
-  // });
-
-  // console.log(response, "response");
-
   const { mutate: signupFn } = useSignup();
 
   const { values, handleSubmit, handleChange, errors } = useSignupForm(() =>
