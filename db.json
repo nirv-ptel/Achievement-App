@@ -1,55 +1,15 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-
-  "profile": {
-    "name": "typicode"
-  },
-
   "me": {
     "email": "yash.radicalloop@gmail.com",
     "password": "123456"
   },
-
+  "register": {},
   "users-list": [
     {
       "username": "YashMarakana",
       "email": "yash.radicalloop@gmail.com",
       "password": "12345678",
       "id": 1
-    },
-    {
-      "email": "Y@gmail.com",
-      "password": "123456",
-      "id": 2
-    },
-    {
-      "email": "yash@123.com",
-      "password": "123456",
-      "id": 3
-    },
-    {
-      "email": "viral.radicalloop@gmail.com",
-      "password": "123456",
-      "id": 4
-    },
-    {
-      "email": "yash@123.com",
-      "password": "123456",
-      "id": 5
     }
   ],
   "users": [
@@ -116,6 +76,24 @@
       "email": "jozesuda@mailinator.com",
       "role": "Praesentium eaque ma",
       "address": "Fugiat dolor dolore "
+    },
+    {
+      "email": "hardik.radicalloop@gmail.com",
+      "password": "$2a$10$X5slIUdPzX2w4g6S80GYp.cJCU0d4jzOOpzSYjRpbfwAAGwkpIKHm",
+      "username": "Hardik",
+      "id": "K5myMSs"
+    },
+    {
+      "email": "sagar.radicalloop@gmail.com",
+      "password": "$2a$10$9eFOhqKPtvQp0Q/uZYUvK.V/eLH9t4SqU54Ja8Z39KRM8EGa1i.wi",
+      "username": "sagar",
+      "id": "tKhsZLn"
+    },
+    {
+      "email": "sumir@test.com",
+      "password": "$2a$10$zF9L/kMelUZ5i4anIJBlzOj3f9xvC3eTW6tCoLdrMV4Gh04n1rdX.",
+      "username": "sumir",
+      "id": "xbi5zf1"
     }
   ],
   "data": [
@@ -151,4 +129,3 @@
     }
   ]
 }
- 

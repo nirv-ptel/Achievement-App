@@ -29,7 +29,7 @@ const UserDispatchContext = createContext<SetUserDetailsType | undefined>(
 );
 
 const UserProvider = ({ children }: UserProviderProps) => {
-  const { data: response, isLoading } = useQuery(["me"], me);
+  const { data: response, isLoading } = useQuery(["getUsers"], me);
 
   return (
     <UserContext.Provider value={{ user: response?.data, isLoading }}>

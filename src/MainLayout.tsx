@@ -8,9 +8,11 @@ import Profile from "./components/profile/components/Profile";
 import { useUser } from "./shared/provider/user-provider/UserProvider";
 import Loader from "./shared/loader/Loader";
 import TanstackTable from "./components/tanstack-table/components/TanstackTable";
+import PdfDownloader from "./components/pdf-downloader/PdfDownloader";
 
 const MainLayout = () => {
-  const { isFetching }: any = useUser();
+  const { user, isFetching }: any = useUser();
+  console.log(user, "user");
 
   if (isFetching) {
     return (
@@ -30,6 +32,7 @@ const MainLayout = () => {
             <Route path="users" element={<UsersTable />} />
             <Route path="tanstack-table" element={<TanstackTable />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="pdf-download" element={<PdfDownloader />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

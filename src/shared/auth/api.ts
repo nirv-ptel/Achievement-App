@@ -7,11 +7,11 @@ export const me = () => {
 };
 
 export const signUp = (data: SignupRequestParams) => {
-  return api.post("/login", data);
+  return api.post("/register", data);
 };
 
 export const signIn = async (data: LoginFormProps) => {
-  const users = await api.get("/users-list");
+  const users = await api.get("/users");
   const user = await users.data.find((user: any) => user.email === data.email);
   if (user) {
     return { data: ACCESS_TOKEN };
@@ -19,3 +19,6 @@ export const signIn = async (data: LoginFormProps) => {
     return Promise.reject(new Error("User not found"));
   }
 };
+
+export const getCurrentUser = (token: string | undefined) =>
+  api.get(`/users/${token}`);

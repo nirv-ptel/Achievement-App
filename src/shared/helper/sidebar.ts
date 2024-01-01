@@ -1,9 +1,14 @@
 import {
+  BookmarkSlashIcon,
+  BookmarkSquareIcon,
+} from "@heroicons/react/24/outline";
+import {
   BoltIcon,
   BookOpenIcon,
   HomeIcon,
   ViewfinderCircleIcon,
 } from "@heroicons/react/24/outline";
+import { Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
 
 export const navigation = [
   {
@@ -37,5 +42,13 @@ export const navigation = [
     current: false,
     action: "TRAINING_LOGS",
     activeMenu: "/tanstack-table",
+  },
+  {
+    name: "PDF Downloader",
+    href: "/pdf-download",
+    icon: Bars3BottomLeftIcon,
+    current: false,
+    action: "PDF_DOWNLOADER",
+    activeMenu: "/pdf-download",
   },
 ];

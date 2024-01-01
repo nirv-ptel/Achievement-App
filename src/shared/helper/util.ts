@@ -1,6 +1,7 @@
 import { InternalAxiosRequestConfig } from "axios";
 import Cookies from "js-cookie";
 import { TOKEN } from "./constant";
+import moment from "moment";
 
 const getItemFromCookie = (key: string) => {
   return Cookies.get(key);
@@ -46,6 +47,22 @@ function capitalizeFirstLetter(str: string | undefined): string {
   return "";
 }
 
+const dateConvert = (epochTime: any) => {
+  if (!epochTime) {
+    return "-";
+  }
+  const date = moment.unix(epochTime);
+  return date.isValid() ? date.format("DD MMMM YYYY") : "-";
+};
+
+const timeConvert = (epochTime: any) => {
+  if (!epochTime) {
+    return "-";
+  }
+  const date = moment.unix(epochTime);
+  return date.isValid() ? date.format("hh:mm A") : "-";
+};
+
 export {
   removeItemInCookie,
   clientConfig,
@@ -54,4 +71,6 @@ export {
   dropDownArrowStyle,
   capitalizeFirstLetter,
   setToken,
+  dateConvert,
+  timeConvert,
 };

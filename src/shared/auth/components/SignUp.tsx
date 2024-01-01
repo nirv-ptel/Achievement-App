@@ -7,9 +7,18 @@ import { useSignupForm } from "../hooks/useSignupForm";
 import FormLabel from "../../form-control/FormLabel";
 import FormInput from "../../form-control/FormInput";
 import FormError from "../../form-control/FormError";
+import { useQuery } from "react-query";
+import { getCurrentUser } from "../api";
+import { ACCESS_TOKEN } from "../../helper/constant";
 
 const SignUp = () => {
   const { mutate: signupFn } = useSignup();
+
+  const { data: response } = useQuery(["getUsers"], () =>
+    getCurrentUser(ACCESS_TOKEN)
+  );
+
+  console.log(response, "response");
 
   const { values, handleSubmit, handleChange, errors } = useSignupForm(() =>
     signupFn({ ...values })
