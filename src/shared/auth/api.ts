@@ -3,7 +3,7 @@ import { ACCESS_TOKEN } from "../helper/constant";
 import { LoginFormProps, SignupRequestParams } from "./types";
 
 export const me = () => {
-  return api.get("/me");
+  return api.get("/users");
 };
 
 export const signUp = (data: SignupRequestParams) => {
@@ -13,6 +13,7 @@ export const signUp = (data: SignupRequestParams) => {
 export const signIn = async (data: LoginFormProps) => {
   const users = await api.get("/users");
   const user = await users.data.find((user: any) => user.email === data.email);
+  console.log(user);
   if (user) {
     return { data: ACCESS_TOKEN };
   } else {

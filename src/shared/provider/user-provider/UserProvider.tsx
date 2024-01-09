@@ -4,8 +4,6 @@
 import React, { ReactNode, createContext } from "react";
 import { useQuery } from "react-query";
 import { me } from "../../auth/api";
-// import { useQuery } from "react-query";
-// import { me } from "../../auth/api";
 
 interface UserProviderProps {
   children: ReactNode;
@@ -30,6 +28,7 @@ const UserDispatchContext = createContext<SetUserDetailsType | undefined>(
 
 const UserProvider = ({ children }: UserProviderProps) => {
   const { data: response, isLoading } = useQuery(["getUsers"], me);
+  // const user = response?.data.find((user: any) => user.email === data.email);
 
   return (
     <UserContext.Provider value={{ user: response?.data, isLoading }}>

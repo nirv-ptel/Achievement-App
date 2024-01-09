@@ -35,14 +35,14 @@ export const navigation = [
     action: "IMAGES",
     activeMenu: "/images",
   },
-  {
-    name: "Tanstack Table",
-    href: "/tanstack-table",
-    icon: ViewfinderCircleIcon,
-    current: false,
-    action: "TRAINING_LOGS",
-    activeMenu: "/tanstack-table",
-  },
+  // {
+  //   name: "Tanstack Table",
+  //   href: "/tanstack-table",
+  //   icon: ViewfinderCircleIcon,
+  //   current: false,
+  //   action: "TRAINING_LOGS",
+  //   activeMenu: "/tanstack-table",
+  // },
   {
     name: "PDF Downloader",
     href: "/pdf-download",

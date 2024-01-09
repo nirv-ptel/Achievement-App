@@ -15,7 +15,7 @@
   "users": [
     {
       "id": "B4ZMHdR",
-      "name": "Demetria Holmes",
+      "name": "yash Holmes",
       "number": "797",
       "email": "duxugow@mailinator.com",
       "role": "Commodi qui culpa e",
@@ -81,7 +81,11 @@
       "email": "hardik.radicalloop@gmail.com",
       "password": "$2a$10$X5slIUdPzX2w4g6S80GYp.cJCU0d4jzOOpzSYjRpbfwAAGwkpIKHm",
       "username": "Hardik",
-      "id": "K5myMSs"
+      "id": "K5myMSs",
+      "name": "hardik",
+      "number": "66644448888888",
+      "role": "ui",
+      "address": "ahmedabad"
     },
     {
       "email": "sagar.radicalloop@gmail.com",

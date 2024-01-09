@@ -12,6 +12,7 @@ import ConfirmationUsersModal from "./ConfirmationUsersModal";
 import useDeleteUsers from "./hooks/useDeleteUsers";
 import Pagination from "../../shared/pagination/Pagination";
 import { dropDownArrowStyle } from "../../shared/helper/util";
+import PdfDownloader from "../pdf-downloader/PdfDownloader";
 
 const UsersTable = () => {
   const { data } = useUserTable();
@@ -30,6 +31,8 @@ const UsersTable = () => {
   const [usersDataState, setUsersDataState] = useState<UserProps | any>(
     {} as UserProps
   );
+
+  const [pdfData, setPdfData] = useState();
 
   const onClickAddUsers = () => {
     setIsAddUsersModalOpen(!isAddUsersModalOpen);
@@ -75,6 +78,21 @@ const UsersTable = () => {
   }) => {
     setSelectedSortOption(selectedOption);
   };
+  const customButtonPdf = useRef<any>(null);
+
+  useEffect(() => {
+    if (pdfData && customButtonPdf.current) {
+      setTimeout(() => {
+        customButtonPdf.current.click();
+      }, 1000);
+    }
+  }, [pdfData]);
+
+  const handleClickPdf = (data: any) => {
+    setPdfData(data);
+  };
+
+  console.log(pdfData, "pdfData");
 
   useEffect(() => {
     const options =
@@ -179,6 +197,14 @@ const UsersTable = () => {
                                 strokeLinejoin="round"
                               />
                             </svg>
+                          </button>
+
+                          <button
+                            onClick={() => handleClickPdf(user)}
+                            type="button"
+                            className="bg-[#eee] hover:bg-[#eef] p-2 rounded-md transition-all"
+                          >
+                            <PdfDownloader pdfData={pdfData} />
                           </button>
                         </div>
                       </td>
