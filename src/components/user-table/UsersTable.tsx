@@ -92,8 +92,6 @@ const UsersTable = () => {
     setPdfData(data);
   };
 
-  console.log(pdfData, "pdfData");
-
   useEffect(() => {
     const options =
       sortedUserData &&
@@ -214,7 +212,7 @@ const UsersTable = () => {
           </table>
         </div>
       </div>
-      <Pagination />
+      {/* <Pagination /> */}
       <ModalPortal open={isAddUsersModalOpen}>
         <AddUsersModal
           data={usersDataState}

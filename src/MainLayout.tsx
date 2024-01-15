@@ -9,10 +9,10 @@ import Loader from "./shared/loader/Loader";
 import TanstackTable from "./components/tanstack-table/components/TanstackTable";
 import PdfDownloader from "./components/pdf-downloader/PdfDownloader";
 import { Dashboard } from "./components/dashboard/Dashboard";
+import ThreeJSModal from "./components/three-js/ThreeJSModal";
 
 const MainLayout = () => {
-  const { user, isFetching }: any = useUser();
-  console.log(user, "user");
+  const { isFetching }: any = useUser();
 
   if (isFetching) {
     return (
@@ -33,6 +33,7 @@ const MainLayout = () => {
             <Route path="tanstack-table" element={<TanstackTable />} />
             <Route path="profile" element={<Profile />} />
             <Route path="pdf-download" element={<PdfDownloader />} />
+            <Route path="three-js" element={<ThreeJSModal />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

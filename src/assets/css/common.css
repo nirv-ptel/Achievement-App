@@ -204,3 +204,24 @@ max-height: calc(100vh - 212px);
 .user-select__menu {
   @apply !z-[11];
 }
+
+/* That style we are using for Three JS Modal */
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #eee;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.product-canvas {
+  width: 55vw;
+  height: 70vh;
+  background: white;
+  box-shadow: 10px 15px 15px 6px #e2e2e2;
+  border-radius: 0px;
+  margin-bottom: 20px;
+}

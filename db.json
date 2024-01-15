@@ -15,11 +15,11 @@
   "users": [
     {
       "id": "B4ZMHdR",
-      "name": "yash Holmes",
-      "number": "797",
-      "email": "duxugow@mailinator.com",
-      "role": "Commodi qui culpa e",
-      "address": "Ab quibusdam nisi qu"
+      "name": "yash marakana",
+      "number": "9909286298",
+      "email": "yash@mailinator.com",
+      "role": "Software engineer",
+      "address": "junagadh"
     },
     {
       "id": "sPbE3IW",
@@ -86,18 +86,6 @@
       "number": "66644448888888",
       "role": "ui",
       "address": "ahmedabad"
-    },
-    {
-      "email": "sagar.radicalloop@gmail.com",
-      "password": "$2a$10$9eFOhqKPtvQp0Q/uZYUvK.V/eLH9t4SqU54Ja8Z39KRM8EGa1i.wi",
-      "username": "sagar",
-      "id": "tKhsZLn"
-    },
-    {
-      "email": "sumir@test.com",
-      "password": "$2a$10$zF9L/kMelUZ5i4anIJBlzOj3f9xvC3eTW6tCoLdrMV4Gh04n1rdX.",
-      "username": "sumir",
-      "id": "xbi5zf1"
     }
   ],
   "data": [
