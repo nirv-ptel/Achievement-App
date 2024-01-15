@@ -1,6 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import Header from "./shared/header/Header";
-import Dashboard from "./components/dashboard/Dashboard";
 import Sidebar from "./shared/sidebar/Sidebar";
 import UsersTable from "./components/user-table/UsersTable";
 import NotFound from "./shared/not-found/NotFound";
@@ -9,6 +8,7 @@ import { useUser } from "./shared/provider/user-provider/UserProvider";
 import Loader from "./shared/loader/Loader";
 import TanstackTable from "./components/tanstack-table/components/TanstackTable";
 import PdfDownloader from "./components/pdf-downloader/PdfDownloader";
+import { Dashboard } from "./components/dashboard/Dashboard";
 
 const MainLayout = () => {
   const { user, isFetching }: any = useUser();

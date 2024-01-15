@@ -14,11 +14,11 @@ import { UserProvider } from "./shared/provider/user-provider/UserProvider";
 
 import Login from "./shared/auth/components/Login";
 import NotFound from "./shared/not-found/NotFound";
-import Dashboard from "./components/dashboard/Dashboard";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import SignUp from "./shared/auth/components/SignUp";
+import { Dashboard } from "./components/dashboard/Dashboard";
 
 function App() {
   const queryClient = new QueryClient();
