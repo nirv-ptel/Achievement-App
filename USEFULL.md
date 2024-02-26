@@ -214,3 +214,49 @@ onMouseDown={removeProps.onMouseDown} >
 }
 
 export default FilterTag; -->
+
+<!---------------------------------------------------------------------------------------------->
+<!-- Below code that we are using for image load while caching image  -->
+
+<!-- <ImgLoad imgPath={image?.thumbnailURL || image?.imageURL} />  -->
+
+<!--
+
+import { useState } from "react";
+
+type ImgLoadProps = {
+  imgPath: string;
+  imageRef?: any;
+  alt?: string;
+  className?: string;
+};
+
+const ImgLoad = ({ imgPath, alt, imageRef, className }: ImgLoadProps) => {
+  const [imgLoad, setImgLoad] = useState(true);
+
+  const onloadEvent = () => {
+    setImgLoad(false);
+  };
+
+  return (
+    <div className={`mb-2 relative ${!imageRef?.current && "z-[-1]"}`}>
+      {imgLoad && (
+        <div className="absolute top-0 left-0 w-full h-full bg-white flex justify-center items-center">
+          <div className="load-wraper">
+            <div className="activity"></div>
+          </div>
+        </div>
+      )}
+      <img
+        ref={imageRef}
+        onLoad={onloadEvent}
+        src={imgPath}
+        alt={alt || "product-image"}
+        loading="lazy"
+        className={className || "w-full h-[139px] rounded-md object-contain"}
+      />
+    </div>
+  );
+};
+
+export default ImgLoad; -->
