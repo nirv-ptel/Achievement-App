@@ -27,7 +27,7 @@ const useCreateUsers = ({ onCloseAddUsers }: onCloseAddUsers) => {
       toast("User has been created!", { type: "success" });
     },
     onError: (error: AxiosError<{ message: string }>) => {
-      toast(error.response?.data.message || "cannot update the user.", {
+      toast(error.response?.data.message || "cannot add user.", {
         type: "error",
       });
     },
