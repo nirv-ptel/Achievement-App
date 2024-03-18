@@ -11,6 +11,7 @@ const useCreateUsersForm = (action: () => void, data?: UserProps) => {
       email: data?.email || "",
       role: data?.role || "",
       address: data?.address || "",
+      password: "111111111",
     },
     enableReinitialize: true,
     validationSchema: userSchema,
