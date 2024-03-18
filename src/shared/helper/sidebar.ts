@@ -18,8 +18,8 @@ export const navigation = [
     activeMenu: "/users",
   },
   {
-    name: "Product",
-    href: "/images",
+    name: "Products",
+    href: "/products",
     icon: BookOpenIcon,
     current: false,
     action: "IMAGES",

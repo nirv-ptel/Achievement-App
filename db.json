@@ -12,6 +12,12 @@
       "id": 1
     }
   ],
+  "products": [
+    {
+      "product_name": "laptop",
+      "product_price": 51999
+    }
+  ],
   "users": [
     {
       "id": "sPbE3IW",
@@ -70,6 +76,24 @@
       "number": "66644448888888",
       "role": "ui",
       "address": "ahmedabad"
+    },
+    {
+      "email": "gybese@mailinator.com",
+      "password": "$2a$10$xpWwsK2yxcOBIz5ftWITYuYbVJ47TfMeA5VknE/bJFPMKJtlaL.wC",
+      "id": "5e5300ca-15c9-4aa2-bebf-feae5752d091",
+      "name": "Lysandra Burke",
+      "number": "187",
+      "role": "Iste odio cupiditate",
+      "address": "Eos eos aut laborum"
+    },
+    {
+      "email": "qewus@mailinator.com",
+      "password": "$2a$10$4XyaYxQE9YynI1jfVYw5ZOt1P3bSH63anXSJnCCe6cZAcMyF740yW",
+      "id": "6621904c-ec1e-4a8f-a5aa-a19950d83867",
+      "name": "Shana Franklin",
+      "number": "845",
+      "role": "Consectetur rem ess",
+      "address": "Tempora maxime tempo"
     }
   ],
   "data": [
