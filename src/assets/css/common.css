@@ -289,3 +289,9 @@ select:focus {
   margin-bottom: 10px;
   font-size: 16px;
 }
+
+
+/* cards styles  */
+.cards {
+  @apply relative border-[4px] border-[#eee] p-2;
+}

@@ -7,6 +7,8 @@ import { Dialog, Transition } from "@headlessui/react";
 
 import { navigation } from "../helper/sidebar";
 
+import logo from "../../assets/images/logo.svg";
+
 // import { ReactComponent as CompanyLogo } from "../../assets/images/logo.svg";
 
 const Sidebar = () => {
@@ -131,9 +133,7 @@ const Sidebar = () => {
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-2 overflow-y-auto border-r border-gray-200 bg-white px-4 pb-4">
             <div className="flex h-16 shrink-0 items-center">
-              <h2 className="ml-[10px] text-gray-800 text-xl font-semibold">
-                Lorem
-              </h2>
+              <img src={logo} alt="logo-img" className="w-36" />
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">

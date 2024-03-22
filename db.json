@@ -94,6 +94,33 @@
       "number": "845",
       "role": "Consectetur rem ess",
       "address": "Tempora maxime tempo"
+    },
+    {
+      "email": "yashpatel@gmail.com",
+      "password": "$2a$10$JQXKfCmNdbLZTAWGkBNeIu/sg9wpkSDEB5Qo/GnSIrNMp3ZszfF8G",
+      "id": "d18b1c93-2b44-4ed1-8c69-750bd7653701",
+      "name": "Yash Marakana",
+      "number": "9909286298",
+      "role": "Frontend Software Engineer",
+      "address": "Ohio, USA"
+    },
+    {
+      "email": "juner@mailinator.com",
+      "password": "$2a$10$WaZ13viCXGwjkf49g/JPsehTbX4hrS3CUCMt0MS.2xvX7Q7zheUPW",
+      "id": "93fd6b36-fe9a-420c-a508-b694f0de411e",
+      "name": "Elliott Butler",
+      "number": "997",
+      "role": "In quo culpa volupt",
+      "address": "Omnis voluptas id ve"
+    },
+    {
+      "email": "cyvefujo@mailinator.com",
+      "password": "$2a$10$74rAtnn0XBnANziZd5QFNO0WViLW0Lk9/PlPGL11.BcXRkbFqyAxC",
+      "id": "a6622471-b766-4d18-98fd-a96c4561ca82",
+      "name": "Pandora England",
+      "number": "85",
+      "role": "Excepteur necessitat",
+      "address": "Voluptatem voluptate"
     }
   ],
   "data": [

@@ -1,44 +1,39 @@
-import React, { ChangeEvent } from "react";
+import { ChangeEvent } from "react";
+
+import search from "../../../src/assets/images/icons/search.svg";
 
 type DebouncedTextBoxProps = {
   value: string;
-  onChange: (value: string) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void; // Fix the type definition
   delay?: number;
+  placeholder: string;
+  onSearch: () => void;
 };
 
 function DebouncedInput({
   value,
   onChange,
-  delay = 1000,
+  placeholder,
+  onSearch,
 }: DebouncedTextBoxProps) {
-  const [inputValue, setInputValue] = React.useState<string>(value);
-  const [debounceTimeout, setDebounceTimeout] = React.useState<any | null>(
-    null
-  );
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newInputValue = e.target.value;
-    setInputValue(newInputValue);
-
-    if (debounceTimeout) {
-      clearTimeout(debounceTimeout);
-    }
-
-    const newTimer = setTimeout(() => {
-      onChange(newInputValue);
-    }, delay);
-
-    setDebounceTimeout(newTimer);
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange(e);
   };
 
   return (
-    <div>
+    <div className="relative">
       <input
-        placeholder="Search"
-        value={inputValue}
-        onChange={handleInputChange}
-        className="w-40 mt-2 py-2 pl-3 pr-10 text-gray-900 bg-white p-1 border border-quillgrey rounded-md outline-none text-xs shadow placeholder-gray-500 "
+        placeholder={placeholder}
+        value={value}
+        onChange={handleChange}
+        className="w-56 py-2 pl-3 pr-10 text-gray-900 bg-white p-1 border border-quillgrey rounded-md outline-none text-xs shadow placeholder-gray-500 "
       />
+      <button
+        className="absolute top-[7px] h-4 w-4 right-3 py-0 z-10"
+        onClick={onSearch}
+      >
+        <img className="w-5 h-5" src={search} alt="search-icon" />
+      </button>
     </div>
   );
 }

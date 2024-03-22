@@ -22,8 +22,8 @@ export const navigation = [
     href: "/products",
     icon: BookOpenIcon,
     current: false,
-    action: "IMAGES",
-    activeMenu: "/images",
+    action: "PRODUCTS",
+    activeMenu: "/products",
   },
   {
     name: "Three JS",

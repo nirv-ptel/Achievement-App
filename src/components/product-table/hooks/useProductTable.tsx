@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
 import { getProduct } from "../api";
 
-const useProductTable = () => {
-  return useQuery(["get-product"], () => getProduct());
+const useProductTable = (searchKeyword: string) => {
+  return useQuery(["get-product"], () => getProduct(searchKeyword));
 };
 
 export default useProductTable;

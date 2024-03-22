@@ -1,10 +1,10 @@
-import { useMutation, useQueryClient } from "react-query";
-import { addUserData } from "../api";
+import { AxiosError } from "axios";
 import { toast } from "react-toastify";
+import { useMutation, useQueryClient } from "react-query";
+
+import { addUserData } from "../api";
 import { UserProps } from "../types/types";
 import useCreateUsersForm from "./useCreateUsersForm";
-import { AxiosError } from "axios";
-import { useNavigate } from "react-router-dom";
 
 type onCloseAddUsers = {
   onCloseAddUsers: () => void;
@@ -12,7 +12,6 @@ type onCloseAddUsers = {
 
 const useCreateUsers = ({ onCloseAddUsers }: onCloseAddUsers) => {
   const queryClient = useQueryClient();
-  const navigate = useNavigate();
 
   const { resetForm } = useCreateUsersForm(() => {
     return "";
@@ -22,9 +21,8 @@ const useCreateUsers = ({ onCloseAddUsers }: onCloseAddUsers) => {
     onSuccess: () => {
       queryClient.refetchQueries(["get-user"]);
       resetForm();
-      navigate("/login");
-      onCloseAddUsers();
       toast("User has been created!", { type: "success" });
+      onCloseAddUsers();
     },
     onError: (error: AxiosError<{ message: string }>) => {
       toast(error.response?.data.message || "cannot add user.", {
