@@ -3,6 +3,9 @@ import DebouncedInput from "../../shared/debounced-input/DebouncedInput";
 import Loader from "../../shared/loader/Loader";
 import useProductTable from "./hooks/useProductTable";
 import { debounce } from "lodash";
+import ModalPortal from "../../shared/modal/Modal";
+import AddProductModal from "./AddProductModal";
+import Button from "../../shared/button/Button";
 
 type ProductProp = {
   thumbnail: string | undefined;
@@ -14,6 +17,16 @@ type ProductProp = {
 
 const ProductsTable = () => {
   const [searchKeyword, setSearchKeyword] = useState<string>("");
+
+  const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
+
+  const onClickAddProduct = () => {
+    setIsAddProductModalOpen(!isAddProductModalOpen);
+  };
+
+  const handleCloseAddProduct = () => {
+    setIsAddProductModalOpen(!isAddProductModalOpen);
+  };
 
   const {
     data: allProducts,
@@ -48,12 +61,19 @@ const ProductsTable = () => {
             <h2 className="text-2xl font-bold tracking-tight text-gray-900">
               Products
             </h2>
-            <div className="flex">
+            <div className="flex items-center gap-4">
               <DebouncedInput
                 placeholder={"Search Product"}
                 value={searchKeyword}
                 onChange={onSearchChange}
                 onSearch={handleSearchClick}
+              />
+              <Button
+                title={"+ Add Users"}
+                type="submit"
+                variant="primary"
+                onClick={onClickAddProduct}
+                className="ml-auto ring-0 shadow-none hover:bg-[#eee]"
               />
             </div>
           </div>
@@ -86,6 +106,9 @@ const ProductsTable = () => {
           </div>
         </>
       )}
+      <ModalPortal open={isAddProductModalOpen}>
+        <AddProductModal onCloseAddProduct={handleCloseAddProduct} />
+      </ModalPortal>
     </>
   );
 };
