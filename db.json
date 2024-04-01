@@ -2,7 +2,7 @@
   "me": {
     "email": "yash.radicalloop@gmail.com",
     "password": "123456",
-    "first_name": "Yash",
+    "first_name": "Yash P",
     "last_name": "Marakana",
     "phone": "9909286298"
   },
@@ -178,6 +178,12 @@
       "number": "928",
       "role": "Omnis non quis quam ",
       "address": "Culpa proident occ"
+    },
+    {
+      "email": "yash.rk@gmail.com",
+      "password": "$2a$10$ARvS9WCG9X9jSM7akYT1t.qXUtpr35QXhdq1DNQF2iyIMwxnlB18a",
+      "username": "yash rk",
+      "id": "I95uzmz"
     }
   ],
   "data": [

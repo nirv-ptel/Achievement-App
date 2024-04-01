@@ -3,7 +3,7 @@ import { ACCESS_TOKEN } from "../helper/constant";
 import { LoginFormProps, SignupRequestParams } from "./types";
 
 export const me = () => {
-  return api.get("/users");
+  return api.get("/me");
 };
 
 export const signUp = (data: SignupRequestParams) => {

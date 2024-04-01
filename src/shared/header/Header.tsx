@@ -21,7 +21,7 @@ const Header = () => {
 
   const onClickLogout = () => {
     removeItemInCookie(TOKEN);
-    navigate("/login");
+    navigate("/admin/login");
     setMenuOpen(false);
   };
 

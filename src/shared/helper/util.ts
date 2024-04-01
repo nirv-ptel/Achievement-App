@@ -1,6 +1,6 @@
 import { InternalAxiosRequestConfig } from "axios";
 import Cookies from "js-cookie";
-import { TOKEN } from "./constant";
+import { ADMIN, TOKEN, USER } from "./constant";
 import moment from "moment";
 
 const getItemFromCookie = (key: string) => {
@@ -61,6 +61,14 @@ const timeConvert = (epochTime: any) => {
   }
   const date = moment.unix(epochTime);
   return date.isValid() ? date.format("hh:mm A") : "-";
+};
+
+export const isAdmin = (currentUserRole: string) => {
+  return currentUserRole === ADMIN;
+};
+
+export const isUser = (currentUserRole: string) => {
+  return currentUserRole === USER;
 };
 
 export {

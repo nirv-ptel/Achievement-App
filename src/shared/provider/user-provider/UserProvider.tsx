@@ -30,6 +30,8 @@ const UserProvider = ({ children }: UserProviderProps) => {
   const { data: response, isLoading } = useQuery(["getUsers"], me);
   // const user = response?.data.find((user: any) => user.email === data.email);
 
+  console.log(response?.data, "response");
+
   return (
     <UserContext.Provider value={{ user: response?.data, isLoading }}>
       {children}
