@@ -21,6 +21,29 @@ const UsersTable = () => {
     return parseInt(b.id) - parseInt(a.id);
   });
 
+  //------------------ below code for pagination ---------------------------
+  // const [pageCount, setPageCount] = useState(0);
+
+  // const [page, setPage] = useState(1);
+
+  // const { refetch, isLoading, isFetching } = useQuery(
+  //   ["get-agents", page],
+  //   () => getAgents(searchKeyword, page),
+  //   {
+  //     onSuccess: (res) => {
+  //       setAgentsData(res?.data?.data);
+  //       setPageCount(
+  //         res?.data?.data?.length === 0 ? 0 : res?.data?.meta?.last_page
+  //       );
+  //       resetAgent();
+  //     },
+  //   }
+  // );
+
+  // const handlePageClick = (event) => {
+  //   setPage(event.selected + 1);
+  // };
+
   // Add and Edit user data integration.
 
   const [isAddUsersModalOpen, setIsAddUsersModalOpen] = useState(false);
@@ -212,6 +235,25 @@ const UsersTable = () => {
         </div>
       </div>
       {/* <Pagination /> */}
+      {/* {pageCount > 1 && (
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel={width <= 950 ? ">" : "Next"}
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={width <= 950 ? 1 : 2}
+          marginPagesDisplayed={1}
+          pageCount={pageCount}
+          previousLabel={width <= 950 ? "<" : "Previous"}
+          renderOnZeroPageCount={null}
+          containerClassName="pagination"
+          pageLinkClassName="page-num"
+          previousLinkClassName="page-num"
+          nextLinkClassName="page-num"
+          activeClassName="active"
+          disabledClassName="page-disable"
+          disabledLinkClassName="page-link-disable"
+        />
+      )} */}
       <ModalPortal open={isAddUsersModalOpen}>
         <AddUsersModal
           data={usersDataState}

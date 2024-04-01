@@ -34,12 +34,39 @@ const Profile = () => {
       </div>
       <form onSubmit={handleSubmit} className="max-w-[37.75rem]">
         <div className="form-group mb-6">
+          <FormLabel title="First Name" className="!font-medium mb-1" />
+          <FormInput
+            value={values?.first_name}
+            type="text"
+            onChange={handleChange}
+            name="first_name"
+          />
+        </div>
+        <div className="form-group mb-6">
+          <FormLabel title="Last Name" className="!font-medium mb-1" />
+          <FormInput
+            value={values?.last_name}
+            type="text"
+            onChange={handleChange}
+            name="last_name"
+          />
+        </div>
+        <div className="form-group mb-6">
           <FormLabel title="Email" className="!font-medium mb-1" />
           <FormInput
             value={values?.email}
             type="text"
             onChange={handleChange}
             name="email"
+          />
+        </div>
+        <div className="form-group mb-6">
+          <FormLabel title="Phone" className="!font-medium mb-1" />
+          <FormInput
+            value={values?.phone}
+            type="text"
+            onChange={handleChange}
+            name="phone"
           />
         </div>
         <Button

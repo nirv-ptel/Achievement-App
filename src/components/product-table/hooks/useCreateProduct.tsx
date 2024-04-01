@@ -7,7 +7,6 @@ const useCreateProduct = ({ onCloseAddProduct }: any) => {
     onSuccess: () => {
       toast?.success("Product created successfully");
       onCloseAddProduct();
-      console.log("first");
     },
   });
 };

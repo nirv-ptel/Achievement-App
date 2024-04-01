@@ -1,7 +1,10 @@
 {
   "me": {
     "email": "yash.radicalloop@gmail.com",
-    "password": "123456"
+    "password": "123456",
+    "first_name": "Yash",
+    "last_name": "Marakana",
+    "phone": "9909286298"
   },
   "register": {},
   "users-list": [
@@ -121,6 +124,60 @@
       "number": "85",
       "role": "Excepteur necessitat",
       "address": "Voluptatem voluptate"
+    },
+    {
+      "email": "naqesebam@mailinator.com",
+      "password": "$2a$10$Tc1htJNe21xgD6B29Q0cbOiVPZk0pP5ZPbXBfcX7efGmYLJSB3PQe",
+      "id": "89abe512-1886-4185-a683-aad6957e0f1f",
+      "name": "Dillon Kemp",
+      "number": "592",
+      "role": "Et libero eos rerum",
+      "address": "Saepe duis aliquid s"
+    },
+    {
+      "email": "wema@mailinator.com",
+      "password": "$2a$10$xzXIqPYYVzQbKOv9CpEFz.wgY0MUcwUhOa/s28Lac8bMqoUbn5xA2",
+      "id": "9fca326c-54e0-4507-83ae-3f943f525780",
+      "name": "Merritt Fischer",
+      "number": "840",
+      "role": "Amet ab esse ex la",
+      "address": "Inventore consequatu"
+    },
+    {
+      "email": "moli@mailinator.com",
+      "password": "$2a$10$VX.SNEbjgBH0/U39eUTnbOhVPxabRbX6F6y.TKipEKv/UPy2BM7TW",
+      "id": "013b4727-5b4e-48ca-a04f-d7e51ed25843",
+      "name": "Damon Hinton",
+      "number": "709",
+      "role": "Adipisicing in et en",
+      "address": "Exercitation proiden"
+    },
+    {
+      "email": "syseb@mailinator.com",
+      "password": "$2a$10$cssXfMlLwOygWmiV2Tb1m.8rDi0Ysogx60eEo.cf2kx8hoOIh1O.a",
+      "id": "020eeeaa-fdb1-4514-b76d-0491abc0f290",
+      "name": "Skyler Roth",
+      "number": "650",
+      "role": "Qui consequatur ips",
+      "address": "Obcaecati voluptatum"
+    },
+    {
+      "email": "xugyban@mailinator.com",
+      "password": "$2a$10$ppHZlyFk4pzbKkLgB.4vjOOaf1YF0640iroH.N4CdJFF/IY6QHL3e",
+      "id": "83f20009-56bb-4137-aabd-9e2884478eb6",
+      "name": "Angelica Hurley",
+      "number": "150",
+      "role": "Quod qui libero eu q",
+      "address": "Repellendus Id accu"
+    },
+    {
+      "email": "hulop@mailinator.com",
+      "password": "$2a$10$6xnh4lBS7PwlT4BTCqMIuOsl9jUaFqekPHXfQ/SqTEC6.kj1Oz2J.",
+      "id": "1aea4013-be43-4a17-adf2-14fb04fba856",
+      "name": "Neville Bonner",
+      "number": "928",
+      "role": "Omnis non quis quam ",
+      "address": "Culpa proident occ"
     }
   ],
   "data": [
