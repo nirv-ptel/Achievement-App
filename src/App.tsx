@@ -7,14 +7,12 @@ import {
 } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-import MainLayout from "./MainLayout";
 import withAuthentication from "./shared/hoc/withAuthentication";
 import withoutAuthentication from "./shared/hoc/withoutAuthentication";
 import {
   UserProvider,
   useUser,
 } from "./shared/provider/user-provider/UserProvider";
-
 import Login from "./shared/auth/components/Login";
 import NotFound from "./shared/not-found/NotFound";
 
@@ -25,13 +23,20 @@ import { Dashboard } from "./components/dashboard/Dashboard";
 import UserLogin from "./modules/users/auth/login/UserLogin";
 import { signIn, signUp } from "./shared/auth/api";
 import UserSignup from "./modules/users/auth/signup/UserSignup";
+import AuthenticatedApp from "./shared/auth/components/AuthenticatedApp";
 
 function App() {
   const queryClient = new QueryClient();
 
-  const UnAuthenticatedApp = () => {
-    return <Outlet />;
+  const Authenticated = () => {
+    return (
+      <UserProvider>
+        <AuthenticatedApp />
+      </UserProvider>
+    );
   };
+
+  const UnAuthenticatedApp = () => <Outlet />;
 
   const user = useUser();
   console.log(user, "useerr");
@@ -42,8 +47,8 @@ function App() {
         <UserProvider>
           <Router>
             <Routes>
-              <Route path="/*" element={withAuthentication(MainLayout)}>
-                <Route path={"users"} element={<Dashboard />} />
+              <Route path="/*" element={withAuthentication(Authenticated)}>
+                <Route element={<Dashboard />} />
               </Route>
               <Route
                 path={"admin"}

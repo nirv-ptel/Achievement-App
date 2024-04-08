@@ -4,7 +4,8 @@
     "password": "123456",
     "first_name": "Yash P",
     "last_name": "Marakana",
-    "phone": "9909286298"
+    "phone": "9909286298",
+    "role": "admin"
   },
   "register": {},
   "users-list": [
@@ -27,7 +28,7 @@
       "name": "Emerson parth",
       "number": "731",
       "email": "bugyquge@mailinator.com",
-      "role": "Quo omnis molestiae ",
+      "role": "user",
       "address": "Eos tempora ut conse"
     },
     {
@@ -35,7 +36,7 @@
       "name": "Branden Robertson",
       "number": "411",
       "email": "vafoges@mailinator.com",
-      "role": "Fuga Quia similique",
+      "role": "user",
       "address": "Consequat Sit cupid"
     },
     {
@@ -43,7 +44,7 @@
       "name": "Brendan Gutierrez",
       "number": "122",
       "email": "cunuxi@mailinator.com",
-      "role": "Consectetur aut quia",
+      "role": "user",
       "address": "Itaque sit harum asp"
     },
     {

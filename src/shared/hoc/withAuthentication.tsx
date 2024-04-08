@@ -8,7 +8,7 @@ const withAuthentication = (WrapedComponent: () => JSX.Element) => {
     if (getItemFromCookie(TOKEN)) {
       return <WrapedComponent />;
     }
-    return <Navigate to={"/login"} />;
+    return <Navigate to={"/admin/login"} />;
   };
 
   return (

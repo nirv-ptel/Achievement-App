@@ -7,13 +7,13 @@ import SelectMenu from "./SelectMenu";
 function Chair3D(props: any) {
   const group: any = useRef();
   const { nodes, materials }: any = useLoader(GLTFLoader, "scene.gltf");
-  console.log(props, "props");
+  // console.log(props, "props");
   const mapVarient: any = useTexture(props.selectedTexture);
 
-  console.log(mapVarient, "mapVarient");
+  // console.log(mapVarient, "mapVarient");
 
-  console.log(nodes, "nodes");
-  console.log(materials, "materials");
+  // console.log(nodes, "nodes");
+  // console.log(materials, "materials");
 
   return (
     <group ref={group} dispose={null} scale={2}>
