@@ -63,12 +63,26 @@ const timeConvert = (epochTime: any) => {
   return date.isValid() ? date.format("hh:mm A") : "-";
 };
 
-export const isAdmin = (currentUserRole: string) => {
+const isAdmin = (currentUserRole: string) => {
   return currentUserRole === ADMIN;
 };
 
-export const isUser = (currentUserRole: string) => {
+const isUser = (currentUserRole: string) => {
   return currentUserRole === USER;
+};
+
+const getUserRoleFromUrl = () => {
+  const path = window.location.pathname;
+  if (path.includes("admin")) {
+    return ADMIN;
+  }
+  return USER;
+};
+
+const getPrefixPathFromUserRole = () => {
+  const userRole = getUserRoleFromUrl();
+  const prefixPath = userRole === ADMIN ? "/admin" : "";
+  return prefixPath;
 };
 
 export {
@@ -81,4 +95,8 @@ export {
   setToken,
   dateConvert,
   timeConvert,
+  isAdmin,
+  isUser,
+  getUserRoleFromUrl,
+  getPrefixPathFromUserRole,
 };

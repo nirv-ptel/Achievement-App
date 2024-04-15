@@ -11,10 +11,14 @@ export const signUp = (data: SignupRequestParams) => {
 };
 
 export const signIn = async (data: LoginFormProps) => {
-  const users = await api.get("/users");
-  const user = await users.data.find((user: any) => user.email === data.email);
-  console.log(user);
-  if (user) {
+  const users = await api.get("/admin-login");
+  // const users = await api.get("/users");
+
+  const user = await users.data.find((user: LoginFormProps) => user);
+
+  console.log(user, "user cred response");
+
+  if (user.email === data.email && user.password === data.password) {
     return { data: ACCESS_TOKEN };
   } else {
     return Promise.reject(new Error("User not found"));

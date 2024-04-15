@@ -7,7 +7,7 @@ interface LoginFormProps {
   password: string;
 }
 
-export const useLoginForm = (loginMutation: () => void) => {
+export const useLoginForm = (action: CallableFunction) => {
   return useFormik<LoginFormProps>({
     initialValues: {
       email: "",
@@ -16,6 +16,6 @@ export const useLoginForm = (loginMutation: () => void) => {
     validationSchema: loginSchema,
     validateOnChange: false,
     enableReinitialize: true,
-    onSubmit: () => loginMutation(),
+    onSubmit: () => action(),
   });
 };

@@ -1,5 +1,5 @@
 .loginForm {
-    @apply max-w-[500px] m-auto mt-[8rem];
+    @apply max-w-[500px] m-auto mt-[8rem] px-6;
 }
 
 .formLabel {

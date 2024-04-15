@@ -9,10 +9,7 @@ import { ToastContainer } from "react-toastify";
 
 import withAuthentication from "./shared/hoc/withAuthentication";
 import withoutAuthentication from "./shared/hoc/withoutAuthentication";
-import {
-  UserProvider,
-  useUser,
-} from "./shared/provider/user-provider/UserProvider";
+import { UserProvider } from "./shared/provider/user-provider/UserProvider";
 import Login from "./shared/auth/components/Login";
 import NotFound from "./shared/not-found/NotFound";
 
@@ -38,9 +35,6 @@ function App() {
 
   const UnAuthenticatedApp = () => <Outlet />;
 
-  const user = useUser();
-  console.log(user, "useerr");
-
   return (
     <>
       <QueryClientProvider client={queryClient}>
@@ -54,7 +48,7 @@ function App() {
                 path={"admin"}
                 element={withoutAuthentication(UnAuthenticatedApp)}
               >
-                <Route path="login" element={<Login />} />
+                <Route path="login" element={<Login onSubmit={signIn} />} />
                 <Route path="signup" element={<SignUp />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
