@@ -85,6 +85,14 @@ const getPrefixPathFromUserRole = () => {
   return prefixPath;
 };
 
+export const formatDate = (dateString: moment.MomentInput) => {
+  return moment(dateString).format("MM/DD/YYYY");
+};
+
+export function formatTime(timeString: moment.MomentInput) {
+  return moment(timeString).format("h:mm:ss a");
+}
+
 export {
   removeItemInCookie,
   clientConfig,

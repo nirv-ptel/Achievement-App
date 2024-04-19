@@ -7,6 +7,7 @@ import { useMutation } from "react-query";
 
 import { getTanstackData } from "../api";
 import useTanstackData from "./useTanstackData";
+import { formatDate, formatTime } from "../../../shared/helper/util";
 
 const useTanstackTableHook = () => {
   const [tanstackState, setTanstackState] = useState();
@@ -24,7 +25,7 @@ const useTanstackTableHook = () => {
   const columns = useMemo<ColumnDef<any>[]>(
     () => [
       {
-        header: "Type",
+        header: "Payment Type",
         accessorKey: "",
         cell: (data) => (
           <span className={"capitalize"}>{data.row.original.type}</span>
@@ -48,19 +49,19 @@ const useTanstackTableHook = () => {
         ),
       },
       {
-        header: "reason",
+        header: "Message",
         accessorKey: "",
         cell: (data) => data.row.original.reason,
       },
       {
-        header: "Created At",
+        header: "Entry Time",
         accessorKey: "",
-        cell: (data) => data.row.original.created_at,
+        cell: (data) => formatTime(data.row.original.created_at).toUpperCase(),
       },
       {
-        header: "Finished At",
+        header: "Sync Time",
         accessorKey: "",
-        cell: (data) => data.row.original.finished_at,
+        cell: (data) => formatTime(data.row.original.finished_at).toUpperCase(),
       },
     ],
     []

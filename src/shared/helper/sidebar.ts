@@ -1,4 +1,4 @@
-import { CubeIcon } from "@heroicons/react/24/outline";
+import { CubeIcon, ViewfinderCircleIcon } from "@heroicons/react/24/outline";
 import { BoltIcon, BookOpenIcon, HomeIcon } from "@heroicons/react/24/outline";
 export const navigation = [
   {
@@ -25,22 +25,22 @@ export const navigation = [
     action: "PRODUCTS",
     activeMenu: "/products",
   },
-  {
-    name: "Three JS",
-    href: "/three-js",
-    icon: CubeIcon,
-    current: false,
-    action: "THREEJS",
-    activeMenu: "/three-js",
-  },
   // {
-  //   name: "Tanstack Table",
-  //   href: "/tanstack-table",
-  //   icon: ViewfinderCircleIcon,
+  //   name: "Three JS",
+  //   href: "/three-js",
+  //   icon: CubeIcon,
   //   current: false,
-  //   action: "TRAINING_LOGS",
-  //   activeMenu: "/tanstack-table",
+  //   action: "THREEJS",
+  //   activeMenu: "/three-js",
   // },
+  {
+    name: "Tanstack Table",
+    href: "/tanstack-table",
+    icon: ViewfinderCircleIcon,
+    current: false,
+    action: "TRAINING_LOGS",
+    activeMenu: "/tanstack-table",
+  },
   // {
   //   name: "PDF Downloader",
   //   href: "/pdf-download",
