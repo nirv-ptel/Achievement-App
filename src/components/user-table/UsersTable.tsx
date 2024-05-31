@@ -222,7 +222,8 @@ const UsersTable = () => {
                           <button
                             onClick={() => handleClickPdf(user)}
                             type="button"
-                            className="bg-[#eee] hover:bg-[#eef] p-2 rounded-md transition-all"
+                            className="cursor-pointer button_hover"
+                            // className="bg-[#eee] hover:bg-[#eef] p-2 rounded-md transition-all"
                           >
                             <PdfDownloader pdfData={pdfData} />
                           </button>

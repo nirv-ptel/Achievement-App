@@ -5,6 +5,7 @@ import { Menu, Transition } from "@headlessui/react";
 import useOutsideClick from "../hooks/useOutsideClick";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../provider/user-provider/UserProvider";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,6 +14,14 @@ const Header = () => {
   const profileRef = useRef(null);
 
   const navigate = useNavigate();
+
+  // for dark mode
+  const [dark, setDark] = useState(false);
+
+  const darkModeHandler = () => {
+    setDark(!dark);
+    document.documentElement.classList.toggle("dark");
+  };
 
   const onClickProfile = () => {
     navigate(`/profile`);
@@ -32,6 +41,10 @@ const Header = () => {
   return (
     <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
       <div className="flex justify-end flex-1 gap-x-4 self-stretch lg:gap-x-6">
+        <button className="w-6" onClick={() => darkModeHandler()}>
+          {dark && <SunIcon />}
+          {!dark && <MoonIcon />}
+        </button>
         <div className="flex items-center gap-x-4 lg:gap-x-6">
           <Menu as="div" className="relative">
             <Menu.Button

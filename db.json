@@ -7,9 +7,7 @@
     "phone": "9909286298",
     "role": "admin"
   },
-
   "register": {},
-
   "admin-login": [
     {
       "username": "YashMarakana",
@@ -18,25 +16,13 @@
       "id": 1
     }
   ],
-
   "products": [
     {
       "product_name": "laptop",
       "product_price": 51999
     }
   ],
-
-  "users": [ 
-    {
-      "email": "yash.radicalloop@gmail.com",
-      "password": "1234567899",
-      "username": "Hardik",
-      "id": "K5myMSs",
-      "name": "hardik",
-      "number": "66644448888888",
-      "role": "user",
-      "address": "ahmedabad"
-    },
+  "users": [
     {
       "email": "gybese@mailinator.com",
       "password": "111222333",
@@ -45,7 +31,7 @@
       "number": "187",
       "role": "user",
       "address": "Eos eos aut laborum"
-    }, 
+    },
     {
       "email": "wema@mailinator.com",
       "password": "111222333",
@@ -57,9 +43,9 @@
     },
     {
       "email": "moli@mailinator.com",
-      "password": "111222333",
+      "password": "$2a$10$KpfaZXksg/vTaFSttR3YGelN0Mc7TVdHzjp3BGIXZLUbaRcGT4kxq",
       "id": "013b4727-5b4e-48ca-a04f-d7e51ed25843",
-      "name": "Damon Hinton",
+      "name": "Damon Hardik",
       "number": "709",
       "role": "user",
       "address": "Exercitation proiden"
@@ -72,9 +58,26 @@
       "number": "650",
       "role": "user",
       "address": "Obcaecati voluptatum"
+    },
+    {
+      "email": "susaqoro@mailinator.com",
+      "password": "$2a$10$FSiBbi5nLdNhHZd41zTlp.klohBDpHoqjneFix4YklbM.wPHe.YOG",
+      "id": "4ca2636e-18da-458f-8cc5-2a386efe21b5",
+      "name": "Ethan Dominguez",
+      "number": "197",
+      "role": "Consequatur Quo pos",
+      "address": "Fugit ea hic velit "
+    },
+    {
+      "email": "tusuvy@mailinator.com",
+      "password": "$2a$10$fQVrPCO9LtHp24oRBGXHuO9FNrWXnu5R5cHO6itTlSzWz3AarvdZ2",
+      "id": "ef4a7fe2-8da6-4fbe-bd53-4f99dfaff71b",
+      "name": "Hillary Chang",
+      "number": "855",
+      "role": "Voluptate at nemo fa",
+      "address": "Cupiditate porro vit"
     }
   ],
-
   "data": [
     {
       "_id": "6572a2c130314b1382edbb5d",

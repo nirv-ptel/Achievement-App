@@ -48,7 +48,7 @@ function App() {
                 path={"admin"}
                 element={withoutAuthentication(UnAuthenticatedApp)}
               >
-                <Route path="login" element={<Login onSubmit={signIn} />} />
+                <Route path="login" element={<Login />} />
                 <Route path="signup" element={<SignUp />} />
                 <Route path="*" element={<NotFound />} />
               </Route>

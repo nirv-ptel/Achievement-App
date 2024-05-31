@@ -33,14 +33,14 @@ export const navigation = [
   //   action: "THREEJS",
   //   activeMenu: "/three-js",
   // },
-  {
-    name: "Tanstack Table",
-    href: "/tanstack-table",
-    icon: ViewfinderCircleIcon,
-    current: false,
-    action: "TRAINING_LOGS",
-    activeMenu: "/tanstack-table",
-  },
+  // {
+  //   name: "Tanstack Table",
+  //   href: "/tanstack-table",
+  //   icon: ViewfinderCircleIcon,
+  //   current: false,
+  //   action: "TRAINING_LOGS",
+  //   activeMenu: "/tanstack-table",
+  // },
   // {
   //   name: "PDF Downloader",
   //   href: "/pdf-download",
