@@ -39,9 +39,12 @@ const Header = () => {
   });
 
   return (
-    <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+    <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 dark:border-blue-500 bg-white dark:bg-slate-800 dark:text-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
       <div className="flex justify-end flex-1 gap-x-4 self-stretch lg:gap-x-6">
-        <button className="w-6" onClick={() => darkModeHandler()}>
+        <button
+          className="w-6 dark_light--icon"
+          onClick={() => darkModeHandler()}
+        >
           {dark && <SunIcon />}
           {!dark && <MoonIcon />}
         </button>
@@ -49,7 +52,7 @@ const Header = () => {
           <Menu as="div" className="relative">
             <Menu.Button
               ref={profileRef}
-              className="-m-1.5 flex items-center justify-center p-2 rounded-[50%] bg-[#eee] w-10 h-10"
+              className="-m-1.5 flex items-center justify-center p-2 rounded-[50%] bg-[#eee] dark:bg-blue-500 border border-slate-800 dark:border-blue-400 w-10 h-10"
               onClick={() => setMenuOpen(!menuOpen)}
             >
               {capitalizeFirstLetter(user?.email)}
@@ -64,7 +67,7 @@ const Header = () => {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="absolute right-0 z-10 mt-2.5 w-40 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
+              <Menu.Items className="absolute right-0 z-10 mt-2.5 w-40 origin-top-right rounded-md bg-white dark:bg-blue-500 py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                 <Menu.Item>
                   {() => (
                     <>
@@ -72,7 +75,7 @@ const Header = () => {
                         type="button"
                         onClick={() => onClickProfile()}
                         className={
-                          "flex items-center gap-2 px-4 py-2 text-sm leading-6 text-gray-900 w-full text-left hover:bg-[#eee] capitalize transition"
+                          "flex items-center gap-2 px-4 py-2 text-sm leading-6 text-gray-900 dark:text-white w-full text-left hover:bg-[#eee] dark:hover:bg-blue-400 capitalize transition"
                         }
                       >
                         Profile
@@ -81,7 +84,7 @@ const Header = () => {
                         type={"button"}
                         onClick={() => onClickLogout()}
                         className={
-                          "flex items-center gap-2 px-4 py-2 text-sm leading-6 text-gray-900 w-full text-left hover:bg-[#eee] capitalize transition"
+                          "flex items-center gap-2 px-4 py-2 text-sm leading-6 text-gray-900 dark:text-white w-full text-left hover:bg-[#eee] dark:hover:bg-blue-400 capitalize transition"
                         }
                       >
                         Logout

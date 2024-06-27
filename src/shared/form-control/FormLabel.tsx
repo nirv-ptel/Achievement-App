@@ -8,7 +8,7 @@ const FormLabel = ({
   return (
     <label
       className={clsx(
-        "block text-sm font-medium leading-6 text-gray-700",
+        "form_label block text-sm font-medium leading-6 text-gray-700",
         className
       )}
     >

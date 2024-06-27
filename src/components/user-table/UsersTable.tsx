@@ -161,7 +161,7 @@ const UsersTable = () => {
                 <th scope="col">Action</th>
               </tr>
             </thead>
-            <tbody className="max-h-[calc(100vh-28rem)]">
+            <tbody className="max-h-[calc(100vh-28rem)] dark:!border-blue-500">
               {sortedUserData &&
                 sortedUserData
                   ?.filter((user: any) => {
@@ -170,7 +170,7 @@ const UsersTable = () => {
                       : true;
                   })
                   ?.map((user: any) => (
-                    <tr key={user.id}>
+                    <tr className="dark:!border-blue-500" key={user.id}>
                       <td>{user.name || "-"}</td>
                       <td>{user.email || "-"}</td>
                       <td>{user.number || "-"}</td>

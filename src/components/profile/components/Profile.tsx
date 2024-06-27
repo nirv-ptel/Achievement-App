@@ -25,12 +25,12 @@ const Profile = () => {
         }
       >
         <button
-          className="rounded-md py-2 px-1.5"
+          className="back_button-arrow-left rounded-md py-2 px-1.5"
           onClick={() => navigation(-1)}
         >
           <ArrowLeftIcon className="h-6 w-6" aria-hidden="true" />
         </button>
-        <p className="text-2xl text-blackolive">Profile</p>
+        <p className="text-2xl text-blackolive dark:text-white">Profile</p>
       </div>
       <form onSubmit={handleSubmit} className="max-w-[37.75rem]">
         <div className="form-group mb-6">
