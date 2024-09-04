@@ -3,15 +3,15 @@ import { ACCESS_TOKEN } from "../helper/constant";
 import { LoginFormProps, SignupRequestParams } from "./types";
 
 export const me = () => {
-  return api.get("/me");
+  return api.get("/api/me");
 };
 
 export const signUp = (data: SignupRequestParams) => {
-  return api.post("/register", data);
+  return api.post("/api/register", data);
 };
 
 export const signIn = async (data: LoginFormProps) => {
-  const users = await api.get("/admin-login");
+  const users = await api.get("/api/admin-login");
   // const users = await api.get("/users");
 
   const user = await users.data.find((user: LoginFormProps) => user);
@@ -26,4 +26,4 @@ export const signIn = async (data: LoginFormProps) => {
 };
 
 export const getCurrentUser = (token: string | undefined) =>
-  api.get(`/users/${token}`);
+  api.get(`/api/users/${token}`);
