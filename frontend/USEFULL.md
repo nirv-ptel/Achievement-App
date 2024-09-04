@@ -44,7 +44,7 @@ const SelectProductFilter = ({
         return res?.data?.map((product: ProductResponse) => {
           return {
             label: product.name,
-            value: product._id,
+            value: product.id,
             count: product.count,
             group: "product",
           };

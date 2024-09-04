@@ -98,7 +98,7 @@
   ],
   "data": [
     {
-      "_id": "6572a2c130314b1382edbb5d",
+      "id": "6572a2c130314b1382edbb5d",
       "type": "Cash",
       "status": "debited",
       "reason": "Amout has been debited",
@@ -108,7 +108,7 @@
       "id": "6572a2c130314b1382edbb5d"
     },
     {
-      "_id": "6572a2c130314b1382edbb55",
+      "id": "6572a2c130314b1382edbb55",
       "type": "Cheque",
       "status": "credited",
       "reason": "Amout has been credited",
@@ -118,7 +118,7 @@
       "id": "6572a2c130314b1382edbb55"
     },
     {
-      "_id": "6572a2c130314b1382edbb57",
+      "id": "6572a2c130314b1382edbb57",
       "type": "Cash",
       "status": "debited",
       "reason": "Amout has been debited",

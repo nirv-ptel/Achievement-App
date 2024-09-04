@@ -27,9 +27,9 @@ app.get("/api", (req, res) => {
 app.patch("api/users/:id", (req, res) => {
   // const id = req.params.id;
   UserModal.findByIdAndUpdate(
-    { _id: id },
+    { id: id },
     {
-      _id: req.body._id,
+      id: req.body.id,
       name: req.body.name,
       email: req.body.email,
       number: req.body.number,

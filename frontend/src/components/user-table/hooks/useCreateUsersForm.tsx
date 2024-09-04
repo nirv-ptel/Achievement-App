@@ -5,7 +5,7 @@ import { userSchema } from "../validation/validation";
 const useCreateUsersForm = (action: () => void, data?: UserProps) => {
   return useFormik({
     initialValues: {
-      _id: data?._id || "",
+      id: data?.id || "",
       name: data?.name || "",
       number: data?.number || "",
       email: data?.email || "",

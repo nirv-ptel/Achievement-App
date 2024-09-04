@@ -10,7 +10,7 @@ export const addUserData = (data: UserProps) => {
 };
 
 export const editUsers = (data: UserProps) => {
-  return api.patch(`/api/users/${data?._id}`, data);
+  return api.patch(`/api/users/${data?.id}`, data);
 };
 
 export const deleteUsers = (data: UserProps) => {
