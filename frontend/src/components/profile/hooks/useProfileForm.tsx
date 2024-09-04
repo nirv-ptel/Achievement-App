@@ -7,10 +7,10 @@ const useProfileForm = (action: CallableFunction) => {
 
   return useFormik<ProfileFormProps>({
     initialValues: {
-      first_name: user?.first_name || "",
-      last_name: user?.last_name || "",
-      email: user?.email || "",
-      phone: user?.phone || "",
+      first_name: user?.[0]?.first_name || "",
+      last_name: user?.[0]?.last_name || "",
+      email: user?.[0]?.email || "",
+      phone: user?.[0]?.phone || "",
     },
     validateOnChange: false,
     enableReinitialize: true,
