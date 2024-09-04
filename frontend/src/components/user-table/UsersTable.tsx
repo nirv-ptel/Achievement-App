@@ -18,7 +18,7 @@ const UsersTable = () => {
   const userData = data?.data;
 
   const sortedUserData = userData?.sort(function (a: UserProps, b: UserProps) {
-    return parseInt(b.id) - parseInt(a.id);
+    return parseInt(b._id) - parseInt(a._id);
   });
 
   //------------------ below code for pagination ---------------------------

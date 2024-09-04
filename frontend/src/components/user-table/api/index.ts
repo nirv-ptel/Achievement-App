@@ -2,7 +2,7 @@ import api from "../../../shared/api";
 import { UserProps } from "../types/types";
 
 export const getUserData = () => {
-  return api.get(`/api/users`);
+  return api.get(`/api`);
 };
 
 export const addUserData = (data: UserProps) => {
@@ -10,7 +10,7 @@ export const addUserData = (data: UserProps) => {
 };
 
 export const editUsers = (data: UserProps) => {
-  return api.patch(`/api/users/${data?.id}`, data);
+  return api.patch(`/api/users/${data?._id}`, data);
 };
 
 export const deleteUsers = (data: UserProps) => {
