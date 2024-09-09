@@ -1,24 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useEffect, useRef, useState } from "react";
+
 import ReactSelect from "react-select";
 
 import { UserProps } from "./types/types";
+
 import ModalPortal from "../../shared/modal/Modal";
 import Button from "../../shared/button/Button";
+import { dropDownArrowStyle } from "../../shared/helper/util";
+
 import AddUsersModal from "./AddUsersModal";
 import useUserTable from "./hooks/useUserTable";
 import ConfirmationUsersModal from "./ConfirmationUsersModal";
 import useDeleteUsers from "./hooks/useDeleteUsers";
-import { dropDownArrowStyle } from "../../shared/helper/util";
 import PdfDownloader from "../pdf-downloader/PdfDownloader";
 
 const UsersTable = () => {
   const { data } = useUserTable();
   const userData = data?.data;
 
-  const sortedUserData = userData?.sort(function (a: UserProps, b: UserProps) {
-    return parseInt(b.id) - parseInt(a.id);
+  const sortedUserData = userData?.sort(function (a: any, b: any) {
+    return parseInt(b._id) - parseInt(a._id);
   });
 
   //------------------ below code for pagination ---------------------------
@@ -45,16 +48,40 @@ const UsersTable = () => {
   // };
 
   // Add and Edit user data integration.
+  const ref = useRef<string>("");
+  const customButtonPdf = useRef<any>(null);
 
   const [isAddUsersModalOpen, setIsAddUsersModalOpen] = useState(false);
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const [isOpenConfirmUsersModal, setIsConfirmUsersModal] = useState(false);
-
+  const [sortOptions, setSortOptions] = useState([]);
+  const [pdfData, setPdfData] = useState();
+  const [selectedSortOption, setSelectedSortOption] = useState<{
+    value: string;
+    label: string;
+  } | null>(null);
   const [usersDataState, setUsersDataState] = useState<UserProps | any>(
     {} as UserProps
   );
 
-  const [pdfData, setPdfData] = useState();
+  const onCloseUsersModal = () => {
+    setIsConfirmUsersModal(!isOpenConfirmUsersModal);
+  };
+  // for delete integration.
+
+  const { mutate: deleteUsers } = useDeleteUsers(onCloseUsersModal);
+
+  const onClickDeleteUsers = (id: string) => {
+    ref.current = id;
+    setIsConfirmUsersModal(!isOpenConfirmUsersModal);
+  };
+
+  const handleSortChange = (selectedOption: {
+    value: string;
+    label: string;
+  }) => {
+    setSelectedSortOption(selectedOption);
+  };
 
   const onClickAddUsers = () => {
     setIsAddUsersModalOpen(!isAddUsersModalOpen);
@@ -71,36 +98,6 @@ const UsersTable = () => {
     setIsAddUsersModalOpen(true);
     setIsEdit(!isEdit);
   };
-
-  // for delete integration.
-
-  const ref = useRef<string>("");
-
-  const onCloseUsersModal = () => {
-    setIsConfirmUsersModal(!isOpenConfirmUsersModal);
-  };
-
-  const { mutate: deleteUsers } = useDeleteUsers(onCloseUsersModal);
-
-  const onClickDeleteUsers = (id: UserProps) => {
-    ref.current = id.toString();
-    setIsConfirmUsersModal(!isOpenConfirmUsersModal);
-  };
-
-  const [sortOptions, setSortOptions] = useState([]);
-
-  const [selectedSortOption, setSelectedSortOption] = useState<{
-    value: string;
-    label: string;
-  } | null>(null);
-
-  const handleSortChange = (selectedOption: {
-    value: string;
-    label: string;
-  }) => {
-    setSelectedSortOption(selectedOption);
-  };
-  const customButtonPdf = useRef<any>(null);
 
   useEffect(() => {
     if (pdfData && customButtonPdf.current) {
@@ -170,7 +167,7 @@ const UsersTable = () => {
                       : true;
                   })
                   ?.map((user: any) => (
-                    <tr className="dark:!border-blue-500" key={user.id}>
+                    <tr className="dark:!border-blue-500" key={user._id}>
                       <td>{user.name || "-"}</td>
                       <td>{user.email || "-"}</td>
                       <td>{user.number || "-"}</td>
@@ -200,7 +197,7 @@ const UsersTable = () => {
                           </button>
                           <button
                             className="cursor-pointer button_hover"
-                            onClick={() => onClickDeleteUsers(user?.id)}
+                            onClick={() => onClickDeleteUsers(user?._id)}
                           >
                             <svg
                               width="20"
