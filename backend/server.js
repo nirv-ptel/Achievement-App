@@ -25,10 +25,10 @@ app.get("/api", (req, res) => {
 });
 
 app.put("/api/users/:id", (req, res) => {
-  const { id } = req.params; // Get the id from params
+  const { id } = req.params;
 
-  UserModal.findByIdAndUpdate(
-    id, // Pass the id to find the user
+  UserModal.findOneAndUpdate(
+    { id },
     {
       name: req.body.name,
       email: req.body.email,
@@ -42,7 +42,7 @@ app.put("/api/users/:id", (req, res) => {
       if (!user) {
         return res.status(404).json({ message: "User not found" });
       }
-      res.json(user); // Return the updated user
+      res.json(user);
     })
     .catch((err) =>
       res.status(500).json({ message: "Server error", error: err })

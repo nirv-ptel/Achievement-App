@@ -10,8 +10,13 @@ export const addUserData = (data: UserProps) => {
 };
 
 export const editUsers = (data: UserProps) => {
-  const { id, ...userData } = data;
-  return api.put(`/api/users/${data?.id}`, userData);
+  return api.put(`/api/users/${data?.id}`, {
+    name: data?.name,
+    email: data?.email,
+    number: data?.number,
+    role: data?.role,
+    address: data?.address,
+  });
 };
 
 export const deleteUsers = (id: string) => {
