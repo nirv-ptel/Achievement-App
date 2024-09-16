@@ -1,5 +1,6 @@
-import { CubeIcon, ViewfinderCircleIcon } from "@heroicons/react/24/outline";
+import { Bars3BottomLeftIcon } from "@heroicons/react/24/outline";
 import { BoltIcon, BookOpenIcon, HomeIcon } from "@heroicons/react/24/outline";
+
 export const navigation = [
   {
     name: "Dashboard",
@@ -24,6 +25,14 @@ export const navigation = [
     current: false,
     action: "PRODUCTS",
     activeMenu: "/products",
+  },
+  {
+    name: "Generate Archivement",
+    href: "/generate-archivement",
+    icon: Bars3BottomLeftIcon,
+    current: false,
+    action: "GENERATE_ARCHIVEMENT",
+    activeMenu: "/generate-archivement",
   },
   // {
   //   name: "Three JS",
