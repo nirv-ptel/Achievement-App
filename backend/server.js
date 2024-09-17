@@ -3,7 +3,24 @@ import cors from "cors";
 import mongoose from "mongoose";
 import UserModal from "./models/Users.js";
 
+import { createCanvas, loadImage, registerFont } from "canvas";
+// import path, { dirname, join } from "path";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+// import { Canvas } from "canvas-constructor";
+// import canvas from "canvas";
+// import { createCanvas, loadImage, registerFont } from "canvas";
+// import path from "path";
+
 const app = express();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+registerFont(join(__dirname, "./fonts/impact.ttf"), {
+  family: "Impact",
+});
 
 // Enable CORS for all routes
 app.use(cors());
@@ -92,6 +109,35 @@ app.get("/api/admin-login", (req, res) => {
     },
   ];
   res.send(admin);
+});
+
+app.get("/:feed", async (req, res) => {
+  try {
+    const img = await loadImage(
+      "https://i.ibb.co/GJXb304/image.png"
+      // "https://teckspace.files.wordpress.com/2011/08/twitter1.jpg"
+    );
+    const canvas = createCanvas(546, 384);
+    const ctx = canvas.getContext("2d");
+
+    ctx.drawImage(img, 0, 0, 546, 384);
+
+    // Set font and text style
+    ctx.font = "28px Impact";
+    ctx.fillStyle = "black"; // Set the text color
+    ctx.textAlign = "left"; // Align text
+    ctx.textBaseline = "top"; // Text baseline
+
+    // Print text
+    ctx.fillText(req.params.feed, 240, 120);
+
+    const image = canvas.toBuffer();
+
+    res.set({ "Content-Type": "image/png" });
+    res.send(image);
+  } catch (error) {
+    res.status(500).send("Error processing image");
+  }
 });
 
 const port = 3000;

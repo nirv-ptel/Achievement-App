@@ -10,8 +10,11 @@
   "author": "yash marakana",
   "license": "ISC",
   "dependencies": {
+    "canvas": "^2.11.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "mongoose": "^8.6.1"
+    "mongoose": "^8.6.1",
+    "nodemon": "^3.1.4",
+    "url": "^0.11.4"
   }
 }
