@@ -50,7 +50,7 @@ const GenerateAchivement = () => {
     }
 
     try {
-      const response = await api.post("/generate-image", formData, {
+      const response = await api.post("/api/images/generate-image", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
