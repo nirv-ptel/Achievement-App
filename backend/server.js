@@ -8,6 +8,8 @@ import { dirname, join } from "node:path";
 import sharp from "sharp";
 import userRoutes from "./userRoutes.js";
 
+import Image from "./models/imageModel.js"; // Import your Image model
+
 const app = express();
 const upload = multer(); // Configure multer for file upload
 
@@ -25,10 +27,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/crud");
 app.use("/api", userRoutes);
 
 app.post("/generate-image", upload.single("image"), async (req, res) => {
-  const { text } = req.body;
+  const { text, gender, email, phone, address, age } = req.body;
   const uploadedImage = req.file; // The uploaded passport-size image
-
-  console.log(uploadedImage, "uploadedImage");
 
   try {
     const img = await loadImage("https://i.ibb.co/7W3bH9Q/image.png");
@@ -90,6 +90,21 @@ app.post("/generate-image", upload.single("image"), async (req, res) => {
 
     // Send the generated image as a PNG response
     const imageBuffer = canvas.toBuffer("image/png");
+
+    // Save data to the database
+    const newImage = new Image({
+      text,
+      gender,
+      email,
+      phone,
+      address,
+      age,
+      image: imageBuffer, // Store the generated image buffer
+    });
+
+    await newImage.save();
+
+    // Send the image buffer as response
     res.set({ "Content-Type": "image/png" });
     res.send(imageBuffer);
   } catch (error) {
