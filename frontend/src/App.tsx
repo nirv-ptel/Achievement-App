@@ -21,6 +21,7 @@ import UserLogin from "./modules/users/auth/login/UserLogin";
 import { signIn, signUp } from "./shared/auth/api";
 import UserSignup from "./modules/users/auth/signup/UserSignup";
 import AuthenticatedApp from "./shared/auth/components/AuthenticatedApp";
+import GenerateAchivement from "./components/generate-archivement/GenerateArchivement";
 
 function App() {
   const queryClient = new QueryClient();
@@ -52,6 +53,10 @@ function App() {
                 <Route path="signup" element={<SignUp />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
+              <Route
+                path="generate-achivement"
+                element={<GenerateAchivement />}
+              />
 
               <Route
                 path={"user"}

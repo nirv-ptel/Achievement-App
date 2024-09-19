@@ -13,7 +13,6 @@ import PdfDownloader from "../../../components/pdf-downloader/PdfDownloader";
 import { Dashboard } from "../../../components/dashboard/Dashboard";
 import ThreeJSModal from "../../../components/three-js/ThreeJSModal";
 import ProductsTable from "../../../components/product-table/ProductTable";
-import GenerateAchivement from "../../../components/generate-archivement/GenerateArchivement";
 
 const Home = () => {
   const { isFetching }: any = useUser();
@@ -39,10 +38,10 @@ const Home = () => {
             <Route path="pdf-download" element={<PdfDownloader />} />
             <Route path="three-js" element={<ThreeJSModal />} />
             <Route path="products" element={<ProductsTable />} />
-            <Route
+            {/* <Route
               path="generate-achivement"
               element={<GenerateAchivement />}
-            />
+            /> */}
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,4 +1,4 @@
-import { Bars3BottomLeftIcon } from "@heroicons/react/24/outline";
+import { CubeIcon } from "@heroicons/react/24/outline";
 import { BoltIcon, BookOpenIcon, HomeIcon } from "@heroicons/react/24/outline";
 
 export const navigation = [
@@ -27,12 +27,12 @@ export const navigation = [
     activeMenu: "/products",
   },
   {
-    name: "Generate Achivement",
-    href: "/generate-achivement",
-    icon: Bars3BottomLeftIcon,
+    name: "Achivement List",
+    href: "/achivement-list",
+    icon: CubeIcon,
     current: false,
     action: "GENERATE_ACHIVEMENT",
-    activeMenu: "/generate-achivement",
+    activeMenu: "/achivement-list",
   },
   // {
   //   name: "Three JS",
