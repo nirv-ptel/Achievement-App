@@ -27,12 +27,12 @@ export const navigation = [
     activeMenu: "/products",
   },
   {
-    name: "Generate Archivement",
-    href: "/generate-archivement",
+    name: "Generate Achivement",
+    href: "/generate-achivement",
     icon: Bars3BottomLeftIcon,
     current: false,
-    action: "GENERATE_ARCHIVEMENT",
-    activeMenu: "/generate-archivement",
+    action: "GENERATE_ACHIVEMENT",
+    activeMenu: "/generate-achivement",
   },
   // {
   //   name: "Three JS",

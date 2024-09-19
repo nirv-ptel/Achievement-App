@@ -27,3 +27,5 @@ export const signIn = async (data: LoginFormProps) => {
 
 export const getCurrentUser = (token: string | undefined) =>
   api.get(`/api/users/${token}`);
+
+export const generateImage = (data: any) => api.post("/generate-image", data);

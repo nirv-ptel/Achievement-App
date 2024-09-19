@@ -23,7 +23,7 @@ const validationSchema = Yup.object().shape({
     .integer("Age must be an integer"),
 });
 
-const GenerateArchivement = () => {
+const GenerateAchivement = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [imageBlob, setImageBlob] = useState<Blob | null>(null);
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
@@ -333,4 +333,4 @@ const GenerateArchivement = () => {
   );
 };
 
-export default GenerateArchivement;
+export default GenerateAchivement;
