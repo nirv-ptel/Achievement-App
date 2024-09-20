@@ -136,7 +136,7 @@ const GenerateAchivement = () => {
   };
 
   return (
-    <div className="px-4 py-8 max-w-[25rem] mx-auto flex flex-col justify-center h-screen">
+    <div className="px-4 py-8 max-w-[25rem] mx-auto flex flex-col justify-start h-screen">
       <div className="flex h-16 items-center justify-center">
         <img src={logo} alt="logo-img" className="w-36" />
       </div>
@@ -157,8 +157,8 @@ const GenerateAchivement = () => {
                 onChange={formik.handleChange}
                 placeholder="Enter your name"
                 className={clsx(
-                  "form-input text-sm py-2 px-4 border rounded w-full",
-                  { "border-red-500": formik.errors.phone }
+                  "form-input text-sm py-2 px-4 border rounded w-full outline-none",
+                  { "border-red-500": formik.errors.text }
                 )}
               />
               {formik.errors.text && (
@@ -173,7 +173,7 @@ const GenerateAchivement = () => {
                 value={formik.values.gender}
                 onChange={formik.handleChange}
                 className={clsx(
-                  "form-input text-sm py-2 px-4 border rounded w-full",
+                  "form-input text-sm py-2 px-4 border rounded w-full outline-none focus:outline-none focus:!border-[#aaa] focus:border-[1px] focus:shadow-none",
                   { "border-red-500": formik.errors.gender }
                 )}
               >
@@ -199,8 +199,8 @@ const GenerateAchivement = () => {
                 onChange={formik.handleChange}
                 placeholder="Enter email"
                 className={clsx(
-                  "form-input text-sm py-2 px-4 border rounded w-full",
-                  { "border-red-500": formik.errors.phone }
+                  "form-input text-sm py-2 px-4 border rounded w-full outline-none",
+                  { "border-red-500": formik.errors.email }
                 )}
               />
               {formik.errors.email && (
@@ -217,7 +217,7 @@ const GenerateAchivement = () => {
                 onChange={formik.handleChange}
                 placeholder="Enter phone"
                 className={clsx(
-                  "form-input text-sm py-2 px-4 border rounded w-full",
+                  "form-input text-sm py-2 px-4 border rounded w-full outline-none",
                   { "border-red-500": formik.errors.phone }
                 )}
               />
@@ -235,8 +235,8 @@ const GenerateAchivement = () => {
                 onChange={formik.handleChange}
                 placeholder="Enter address"
                 className={clsx(
-                  "form-input text-sm py-2 px-4 border rounded w-full",
-                  { "border-red-500": formik.errors.phone }
+                  "form-input text-sm py-2 px-4 border rounded w-full outline-none",
+                  { "border-red-500": formik.errors.address }
                 )}
               />
               {formik.errors.address && (
@@ -253,8 +253,8 @@ const GenerateAchivement = () => {
                 onChange={formik.handleChange}
                 placeholder="Enter age"
                 className={clsx(
-                  "form-input text-sm py-2 px-4 border rounded w-full",
-                  { "border-red-500": formik.errors.phone }
+                  "form-input text-sm py-2 px-4 border rounded w-full outline-none",
+                  { "border-red-500": formik.errors.age }
                 )}
               />
               {formik.errors.age && (
@@ -296,6 +296,7 @@ const GenerateAchivement = () => {
                     className="hidden"
                     onChange={handleImageUpload}
                     ref={fileInputRef}
+                    required
                   />
                 </label>
               </div>
