@@ -16,6 +16,15 @@ registerFont(join(__dirname, "./fonts/impact.ttf"), {
   family: "Impact",
 });
 
+router.get("/", async (req, res) => {
+  try {
+    const images = await Image.find(); // Fetch all images
+    res.status(200).json(images); // Respond with the image data
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch images", error });
+  }
+});
+
 router.post("/generate-image", upload.single("image"), async (req, res) => {
   const { text, gender, email, phone, address, age } = req.body;
   const uploadedImage = req.file; // The uploaded passport-size image

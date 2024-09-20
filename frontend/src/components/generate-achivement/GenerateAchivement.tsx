@@ -32,7 +32,7 @@ const GenerateAchivement = () => {
   const [croppedImage, setCroppedImage] = useState<Blob | null>(null);
 
   const cropperRef = useRef<ReactCropperElement | null>(null);
-  const fileInputRef = useRef<HTMLInputElement | null>(null); // Reference for file input
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [imageName, setImageName] = useState("");
 
   // Define the mutation for API submission
@@ -278,9 +278,9 @@ const GenerateAchivement = () => {
                     >
                       <path
                         stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
                       />
                     </svg>
