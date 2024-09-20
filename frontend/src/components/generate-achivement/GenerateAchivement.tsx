@@ -144,7 +144,7 @@ const GenerateAchivement = () => {
         <>
           <form
             onSubmit={formik.handleSubmit}
-            className="flex flex-col gap-4 mt-5"
+            className="flex flex-col gap-4 mt-5 border border-[#aaa] p-6 rounded-lg shadow-lg"
           >
             <h3 className="text-lg font-semibold mb-2 text-center">
               Generate your Achivement
@@ -168,23 +168,29 @@ const GenerateAchivement = () => {
               )}
             </div>
             <div>
-              <input
-                type="text"
+              <select
                 name="gender"
                 value={formik.values.gender}
                 onChange={formik.handleChange}
-                placeholder="Enter gender"
                 className={clsx(
                   "form-input text-sm py-2 px-4 border rounded w-full",
-                  { "border-red-500": formik.errors.phone }
+                  { "border-red-500": formik.errors.gender }
                 )}
-              />
+              >
+                <option value="" disabled>
+                  Select gender
+                </option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
               {formik.errors.gender && (
                 <div className="text-red-500 text-xs mt-1">
                   {formik.errors.gender}
                 </div>
               )}
             </div>
+
             <div>
               <input
                 type="email"
@@ -258,13 +264,41 @@ const GenerateAchivement = () => {
               )}
             </div>
             <div>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="form-input py-2 px-4 border rounded w-full"
-                ref={fileInputRef} // Attach ref to the input file
-              />
+              <div className="flex items-center justify-center w-full">
+                <label className="flex flex-col items-center justify-center w-full h-[10rem] border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <svg
+                      className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 20 16"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                      />
+                    </svg>
+                    <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                      <span className="font-semibold">Click to upload</span>
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      SVG, PNG, JPG
+                    </p>
+                  </div>
+                  <input
+                    id="dropzone-file"
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={handleImageUpload}
+                    ref={fileInputRef}
+                  />
+                </label>
+              </div>
             </div>
 
             {/* Conditionally render the cropper or the cropped image */}
@@ -273,7 +307,7 @@ const GenerateAchivement = () => {
                 <Cropper
                   src={URL.createObjectURL(uploadedImage)}
                   style={{ height: 300, width: "100%" }}
-                  initialAspectRatio={4 / 3} // Passport-size aspect ratio
+                  initialAspectRatio={4 / 3}
                   guides={true}
                   viewMode={1}
                   dragMode="move"
@@ -308,7 +342,7 @@ const GenerateAchivement = () => {
                 <button
                   type="button"
                   onClick={handleEdit}
-                  className="btn btn-secondary py-1 px-1 bg-gray-500 text-white hover:bg-gray-600 absolute top-[-5px] right-[-8px] rounded-full"
+                  className="btn btn-secondary py-1 px-1 bg-gray-500 text-white hover:bg-gray-600 absolute top-[-5px] right-[-8px] rounded-full m-0 h-6 w-6"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -337,12 +371,12 @@ const GenerateAchivement = () => {
       )}
 
       {imageUrl && (
-        <div className="mt-8">
+        <div className="mt-8 border border-[#aaa] p-6 rounded-lg">
           <h3 className="text-lg font-semibold mb-4">Generated Image:</h3>
           <img src={imageUrl} alt="Generated Achievement" />
           <button
             onClick={downloadImage}
-            className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 mt-4"
+            className="py-2 px-4 bg-emerald-500 text-white rounded hover:bg-emerald-600 mt-4 w-full transition-all shadow-lg"
           >
             Download Image
           </button>
