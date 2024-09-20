@@ -21,7 +21,7 @@ import UserLogin from "./modules/users/auth/login/UserLogin";
 import { signIn, signUp } from "./shared/auth/api";
 import UserSignup from "./modules/users/auth/signup/UserSignup";
 import AuthenticatedApp from "./shared/auth/components/AuthenticatedApp";
-import GenerateAchivement from "./components/generate-archivement/GenerateArchivement";
+import GenerateAchivement from "./components/generate-achivement/GenerateAchivement";
 
 function App() {
   const queryClient = new QueryClient();
