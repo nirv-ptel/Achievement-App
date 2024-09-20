@@ -33,6 +33,7 @@ const GenerateAchivement = () => {
 
   const cropperRef = useRef<ReactCropperElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null); // Reference for file input
+  const [imageName, setImageName] = useState("");
 
   // Define the mutation for API submission
   const { mutateAsync } = useMutation(async (values: any) => {
@@ -82,6 +83,7 @@ const GenerateAchivement = () => {
     onSubmit: async (values, { setSubmitting, resetForm }) => {
       try {
         await mutateAsync(values);
+        setImageName(values.text);
         resetForm();
         setUploadedImage(null); // Clear uploaded image
         setCroppedImageUrl(null); // Clear cropped image URL
@@ -127,7 +129,7 @@ const GenerateAchivement = () => {
       const url = window.URL.createObjectURL(imageBlob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `${formik.values.text}.png`;
+      a.download = `${imageName}.png`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
