@@ -1,4 +1,4 @@
-import { CubeIcon } from "@heroicons/react/24/outline";
+import { CubeIcon, TrophyIcon } from "@heroicons/react/24/outline";
 import { BoltIcon, BookOpenIcon, HomeIcon } from "@heroicons/react/24/outline";
 
 export const navigation = [
@@ -25,6 +25,14 @@ export const navigation = [
     current: false,
     action: "PRODUCTS",
     activeMenu: "/products",
+  },
+  {
+    name: "Achivements",
+    href: "/achivements",
+    icon: TrophyIcon,
+    current: false,
+    action: "ACHIVEMENTS",
+    activeMenu: "/achivements",
   },
   {
     name: "Achivement List",

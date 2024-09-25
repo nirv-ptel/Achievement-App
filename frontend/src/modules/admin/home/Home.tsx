@@ -14,6 +14,7 @@ import { Dashboard } from "../../../components/dashboard/Dashboard";
 import ThreeJSModal from "../../../components/three-js/ThreeJSModal";
 import ProductsTable from "../../../components/product-table/ProductTable";
 import AchivementList from "../../../components/achivement-list/AchivementList";
+import Achivements from "../../../components/achivements/Achivements";
 
 const Home = () => {
   const { isFetching }: any = useUser();
@@ -39,6 +40,7 @@ const Home = () => {
             <Route path="pdf-download" element={<PdfDownloader />} />
             <Route path="three-js" element={<ThreeJSModal />} />
             <Route path="products" element={<ProductsTable />} />
+            <Route path="achivements" element={<Achivements />} />
             <Route path="achivement-list" element={<AchivementList />} />
           </Route>
           <Route path="*" element={<NotFound />} />
