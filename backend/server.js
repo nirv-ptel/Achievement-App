@@ -55,12 +55,6 @@ app.post("/upload", upload.single("file"), (req, res) => {
     });
 });
 
-// app.get("/getImage", (req, res) => {
-//   AchivementModal.create({ image: req.file.filename }).then((result) =>
-//     res.json(result).catch((err) => console.log(err))
-//   );
-// });
-
 app.get("/getImage", (req, res) => {
   AchivementModal.find({})
     .then((result) => {

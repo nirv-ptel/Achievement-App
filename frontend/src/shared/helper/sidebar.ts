@@ -35,7 +35,7 @@ export const navigation = [
     activeMenu: "/achivements",
   },
   {
-    name: "Achivement List",
+    name: "User List",
     href: "/achivement-list",
     icon: CubeIcon,
     current: false,
