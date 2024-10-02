@@ -62,14 +62,14 @@ const Achivements = () => {
       />
 
       {/* Image Listing */}
-      <div className="grid grid-cols-3 gap-4 mt-4">
+      <div className="flex flex-wrap gap-4 mt-4">
         {images.length > 0 ? (
           images.map((image, index) => (
-            <div key={index} className="w-full h-auto">
+            <div key={index} className="w-64 h-auto">
               <img
                 src={`http://localhost:3000/Image/` + image}
                 alt={`Achievement ${index + 1}`}
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           ))

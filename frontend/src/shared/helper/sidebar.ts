@@ -8,7 +8,7 @@ export const navigation = [
     icon: HomeIcon,
     current: true,
     action: "DASHBOARD",
-    activeMenu: "/",
+    activeMenu: "/dashboard",
   },
   {
     name: "Achivements",

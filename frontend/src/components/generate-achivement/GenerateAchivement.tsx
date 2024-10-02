@@ -1,12 +1,16 @@
 import React, { useRef, useState } from "react";
-import Cropper from "react-cropper";
-import "cropperjs/dist/cropper.css";
-import type { ReactCropperElement } from "react-cropper";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { useMutation } from "react-query";
-import api from "../../shared/api";
+
 import clsx from "clsx";
+import * as Yup from "yup";
+import { useFormik } from "formik";
+import Cropper from "react-cropper";
+import type { ReactCropperElement } from "react-cropper";
+import { useMutation } from "react-query";
+
+import "cropperjs/dist/cropper.css";
+
+import api from "../../shared/api";
+
 import logo from "../../assets/images/logo.svg";
 
 // Define the validation schema for Formik
