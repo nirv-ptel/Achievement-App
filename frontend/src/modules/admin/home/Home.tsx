@@ -6,15 +6,10 @@ import NotFound from "../../../shared/not-found/NotFound";
 import { useUser } from "../../../shared/provider/user-provider/UserProvider";
 import Loader from "../../../shared/loader/Loader";
 
-import UsersTable from "../../../components/user-table/UsersTable";
 import Profile from "../../../components/profile/components/Profile";
-import TanstackTable from "../../../components/tanstack-table/components/TanstackTable";
-import PdfDownloader from "../../../components/pdf-downloader/PdfDownloader";
-import { Dashboard } from "../../../components/dashboard/Dashboard";
-import ThreeJSModal from "../../../components/three-js/ThreeJSModal";
-import ProductsTable from "../../../components/product-table/ProductTable";
 import AchivementList from "../../../components/achivement-list/AchivementList";
 import Achivements from "../../../components/achivements/Achivements";
+import Dashboard from "../../../components/dashboard/Dashboard";
 
 const Home = () => {
   const { isFetching }: any = useUser();
@@ -34,12 +29,8 @@ const Home = () => {
         <Routes>
           <Route path="" element={<Outlet />}>
             <Route index element={<Dashboard />} />
-            <Route path="users" element={<UsersTable />} />
-            <Route path="tanstack-table" element={<TanstackTable />} />
+
             <Route path="profile" element={<Profile />} />
-            <Route path="pdf-download" element={<PdfDownloader />} />
-            <Route path="three-js" element={<ThreeJSModal />} />
-            <Route path="products" element={<ProductsTable />} />
             <Route path="achivements" element={<Achivements />} />
             <Route path="achivement-list" element={<AchivementList />} />
           </Route>

@@ -16,12 +16,12 @@ import NotFound from "./shared/not-found/NotFound";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import SignUp from "./shared/auth/components/SignUp";
-import { Dashboard } from "./components/dashboard/Dashboard";
 import UserLogin from "./modules/users/auth/login/UserLogin";
 import { signIn, signUp } from "./shared/auth/api";
 import UserSignup from "./modules/users/auth/signup/UserSignup";
 import AuthenticatedApp from "./shared/auth/components/AuthenticatedApp";
 import GenerateAchivement from "./components/generate-achivement/GenerateAchivement";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   const queryClient = new QueryClient();
