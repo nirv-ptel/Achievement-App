@@ -1,7 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import clsx from "clsx";
 import * as Yup from "yup";
+import Select from "react-select";
+
 import { useFormik } from "formik";
 import Cropper from "react-cropper";
 import type { ReactCropperElement } from "react-cropper";
@@ -34,12 +36,10 @@ const GenerateAchivement = () => {
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
   const [croppedImageUrl, setCroppedImageUrl] = useState<string | null>(null);
   const [croppedImage, setCroppedImage] = useState<Blob | null>(null);
-
   const cropperRef = useRef<ReactCropperElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [imageName, setImageName] = useState("");
 
-  // Define the mutation for API submission
   const { mutateAsync } = useMutation(async (values: any) => {
     const formData = new FormData();
     formData.append("text", values.text);
@@ -57,9 +57,7 @@ const GenerateAchivement = () => {
 
     try {
       const response = await api.post("/api/images/generate-image", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+        headers: { "Content-Type": "multipart/form-data" },
         responseType: "arraybuffer",
       });
 
@@ -72,7 +70,6 @@ const GenerateAchivement = () => {
     }
   });
 
-  // Formik form setup
   const formik = useFormik({
     initialValues: {
       text: "",
@@ -92,7 +89,6 @@ const GenerateAchivement = () => {
         setUploadedImage(null); // Clear uploaded image
         setCroppedImageUrl(null); // Clear cropped image URL
 
-        // Clear file input field
         if (fileInputRef.current) {
           fileInputRef.current.value = ""; // Reset file input
         }
@@ -103,11 +99,53 @@ const GenerateAchivement = () => {
     },
   });
 
-  // Handle image upload and crop
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    api
+      .get("/getImage")
+      .then((res) => {
+        if (res.data) {
+          const formattedImages = res.data.map((item: any) => ({
+            value: item.image, // Assuming 'image' is the field containing the file name
+            label: item.image,
+            image: `http://localhost:3000/Image/${item.image}`, // Image URL
+          }));
+          setImages(formattedImages);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  const customSingleValue = ({ data }: any) => (
+    <div className="flex items-center">
+      <img
+        src={data.image}
+        alt={data.label}
+        className="w-8 h-8 mr-2 rounded-full"
+      />
+      <span>{data.label}</span>
+    </div>
+  );
+
+  const customOption = (props: any) => {
+    const { data, innerRef, innerProps } = props;
+    return (
+      <div ref={innerRef} {...innerProps} className="flex items-center p-2">
+        <img
+          src={data.image}
+          alt={data.label}
+          className="w-8 h-8 mr-2 rounded-full"
+        />
+        <span>{data.label}</span>
+      </div>
+    );
+  };
+
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setUploadedImage(e.target.files[0]);
-      setCroppedImageUrl(null); // Reset cropped image URL when uploading a new image
+      setCroppedImageUrl(null);
     }
   };
 
@@ -117,15 +155,15 @@ const GenerateAchivement = () => {
       cropper.getCroppedCanvas().toBlob((blob: Blob | null) => {
         if (blob) {
           setCroppedImage(blob);
-          const croppedImageURL = URL.createObjectURL(blob); // Create URL for cropped image
-          setCroppedImageUrl(croppedImageURL); // Display the cropped image instead of cropper
+          const croppedImageURL = URL.createObjectURL(blob);
+          setCroppedImageUrl(croppedImageURL);
         }
       });
     }
   };
 
   const handleEdit = () => {
-    setCroppedImageUrl(null); // Hide cropped image URL to show the cropper
+    setCroppedImageUrl(null);
   };
 
   const downloadImage = () => {
@@ -196,7 +234,24 @@ const GenerateAchivement = () => {
                 </div>
               )}
             </div>
-
+            <div>
+              {/* Dropdown for selecting images */}
+              {images.length > 0 ? (
+                <Select
+                  options={images}
+                  components={{
+                    SingleValue: customSingleValue,
+                    Option: customOption,
+                  }}
+                  placeholder="Select an achievement image..."
+                  classNamePrefix={"achievement_dropdown"}
+                  className="w-full"
+                  isClearable
+                />
+              ) : (
+                <p>Loading images...</p>
+              )}
+            </div>
             <div>
               <input
                 type="email"

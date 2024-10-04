@@ -330,3 +330,6 @@ select:focus {
 .back_button-arrow-left svg{
   @apply dark:fill-white
 }
+.achievement_dropdown__input-container{
+  @apply !flex;
+}

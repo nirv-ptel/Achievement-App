@@ -62,10 +62,13 @@ const Achivements = () => {
       />
 
       {/* Image Listing */}
-      <div className="flex flex-wrap gap-4 mt-4">
+      <div className="flex flex-wrap gap-4 mt-14">
         {images.length > 0 ? (
           images.map((image, index) => (
-            <div key={index} className="w-64 h-auto">
+            <div
+              key={index}
+              className="w-64 h-auto border-[2px] border-[#000] rounded p-2"
+            >
               <img
                 src={`http://localhost:3000/Image/` + image}
                 alt={`Achievement ${index + 1}`}
@@ -74,7 +77,7 @@ const Achivements = () => {
             </div>
           ))
         ) : (
-          <p>No images uploaded yet</p>
+          <p className="text-[#6e6e6e]">No images uploaded yet.</p>
         )}
       </div>
 
